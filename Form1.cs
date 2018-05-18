@@ -68,9 +68,10 @@ namespace test
                     break;
                 case "영화예매":
                  //   page21.Visible = false;
-                   // page_auditorium1.Visible = true;
+              /*      page_auditorium1.Visible = true;
                     if(first == 0)
-                        page_auditorium1.load_data();
+                        page_auditorium1.load_data();*/
+
                     break;
                 case "구매":
                     //page_auditorium1.Visible = false;                    

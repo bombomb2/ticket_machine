@@ -47,7 +47,7 @@
             // page_auditorium1
             // 
             this.page_auditorium1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.page_auditorium1.Location = new System.Drawing.Point(0, 24);
+            this.page_auditorium1.Location = new System.Drawing.Point(-12, 333);
             this.page_auditorium1.Name = "page_auditorium1";
             this.page_auditorium1.Size = new System.Drawing.Size(760, 418);
             this.page_auditorium1.TabIndex = 10;
@@ -55,7 +55,7 @@
             // page21
             // 
             this.page21.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.page21.Location = new System.Drawing.Point(-3, 9);
+            this.page21.Location = new System.Drawing.Point(-12, 333);
             this.page21.Name = "page21";
             this.page21.Size = new System.Drawing.Size(762, 435);
             this.page21.TabIndex = 11;
