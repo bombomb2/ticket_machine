@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Collections;
 using System.IO;
-namespace test
+namespace ticket
 {
 
     public partial class page_auditorium : UserControl

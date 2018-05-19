@@ -300,3 +300,7 @@ __pycache__/
 # End of https://www.gitignore.io/api/visualstudio
 bin/Debug/test.vshost.exe
 bin/Debug/test.vshost.exe
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/Debug/TempPE/Properties.Resources.Designer.cs.dll
+obj/Debug/DesignTimeResolveAssemblyReferences.cache
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

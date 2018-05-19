@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-namespace test
+namespace ticket
 {
     public partial class page2 : UserControl
     {

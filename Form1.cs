@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
-namespace test
+namespace ticket
 {
     
     public partial class Form1 : Form
@@ -21,6 +21,7 @@ namespace test
         int first = 0;
         public static int login_check = 0;
         Form_login login;
+
         public Form1()
         {
             InitializeComponent();           
@@ -29,6 +30,7 @@ namespace test
             page_auditorium1.Visible = false;                        
             page21.ButtonClicked += button_Click;            
             page_auditorium1.ButtonClicked += button_Click;
+            page_movie_select1.ButtonClicked += button_Click;
             login = new Form_login();
             conn = new SQLiteConnection("Data source=" + path2 + ";Version=3");
            
@@ -73,7 +75,17 @@ namespace test
                           if(first == 0)
                               page_auditorium1.load_data();*/
                     page_movie_select1.Visible = true;
+                    page_movie_select1.InitListbox();
+                    break;
 
+                case "movieselect_cancel":
+                    page_movie_select1.Visible = false;
+                    break;
+
+                case "movieselect_next":
+                    page_movie_select1.Visible = false;
+                    login.ShowDialog();
+                    page_auditorium1.Visible = true;
                     break;
                 case "구매":
                     //page_auditorium1.Visible = false;                    

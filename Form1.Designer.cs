@@ -1,4 +1,4 @@
-﻿namespace test
+﻿namespace ticket
 {
     partial class Form1
     {
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.page_auditorium1 = new test.page_auditorium();
-            this.page21 = new test.page2();
+            this.page_auditorium1 = new ticket.page_auditorium();
+            this.page21 = new ticket.page2();
             this.page_movie_select1 = new ticket.page_movie_select();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             // page_auditorium1
             // 
             this.page_auditorium1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.page_auditorium1.Location = new System.Drawing.Point(0, 24);
+            this.page_auditorium1.Location = new System.Drawing.Point(-3, 26);
             this.page_auditorium1.Name = "page_auditorium1";
             this.page_auditorium1.Size = new System.Drawing.Size(760, 418);
             this.page_auditorium1.TabIndex = 10;
@@ -75,9 +75,9 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(760, 437);
-            this.Controls.Add(this.page_movie_select1);
             this.Controls.Add(this.page_auditorium1);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.page_movie_select1);
             this.Controls.Add(this.page21);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -94,7 +94,7 @@
         private System.Windows.Forms.Label label4;
         private page_auditorium page_auditorium1;
         private page2 page21;
-        private ticket.page_movie_select page_movie_select1;
+        private page_movie_select page_movie_select1;
     }
 }
 

@@ -1,4 +1,4 @@
-﻿namespace test
+﻿namespace ticket
 {
     partial class page_auditorium
     {
