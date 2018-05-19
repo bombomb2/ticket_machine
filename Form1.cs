@@ -15,7 +15,7 @@ namespace test
     public partial class Form1 : Form
     {
 
-        public static string path2 = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName+"\\data.sqlite";       
+       public static string path2 = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName+"\\data.sqlite";       
        public static SQLiteConnection conn = null;      
         private Point mousePoint;
         int first = 0;
@@ -25,6 +25,7 @@ namespace test
         {
             InitializeComponent();           
             page21.Visible = true;
+            page_movie_select1.Visible = false;
             page_auditorium1.Visible = false;                        
             page21.ButtonClicked += button_Click;            
             page_auditorium1.ButtonClicked += button_Click;
@@ -67,10 +68,11 @@ namespace test
                 //    page11.Visible = true;
                     break;
                 case "영화예매":
-                 //   page21.Visible = false;
-              /*      page_auditorium1.Visible = true;
-                    if(first == 0)
-                        page_auditorium1.load_data();*/
+                    //   page21.Visible = false;
+                    /*      page_auditorium1.Visible = true;
+                          if(first == 0)
+                              page_auditorium1.load_data();*/
+                    page_movie_select1.Visible = true;
 
                     break;
                 case "구매":

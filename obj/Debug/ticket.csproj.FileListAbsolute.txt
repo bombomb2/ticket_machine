@@ -22,3 +22,4 @@ D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.Properties.Resource
 D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.csproj.GenerateResource.Cache
 D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.exe
 D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.pdb
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.csprojResolveAssemblyReference.cache
