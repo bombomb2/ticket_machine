@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
 
-namespace ticket
+namespace ticket //남은 좌석수 표시하기
 {
     public partial class page_movie_select : UserControl
     {
@@ -100,7 +100,6 @@ namespace ticket
                              String time = rdr["time"].ToString();
                              listBox_time.Items.Add(auditorium_num + "상영관    " + time);
                          }
-                         isSelected_time = true;
                      }
             
         }
@@ -112,24 +111,28 @@ namespace ticket
             if (temp_arr[temp_arr.Length - 1].Equals("이전"))
             {
                 buttonClicked.Invoke("movieselect_cancel", e);
+                conn.Close();
             }
             else if (temp_arr[temp_arr.Length - 1].Equals("좌석선택"))
             {
-                        string sql = "SELECT movie_id from timetable " +
+                if (isSelected_time)
+                {
+                    string sql = "SELECT movie_id from timetable " +
                                   "where title_num =(SELECT title_num from movie where title = '"
-                                  + listBox_movie_select.SelectedItem.ToString() + "') and date = '" + date + "' and time = '" + listBox_time.SelectedItem.ToString().Substring(8, 5)+ "';";
+                                  + listBox_movie_select.SelectedItem.ToString() + "') and date = '" + date + "' and time = '" + listBox_time.SelectedItem.ToString().Substring(8, 5) + "';";
 
-                            SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                            SQLiteDataReader rdr = cmd.ExecuteReader();
+                    SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                    SQLiteDataReader rdr = cmd.ExecuteReader();
 
-                            while (rdr.Read()) {
-                            movie_id = int.Parse(rdr["movie_id"].ToString());
-                            MessageBox.Show("movie_id: "+movie_id);
-                            }    
-                           buttonClicked.Invoke("movieselect_next", e);
+                    while (rdr.Read())
+                    {
+                        movie_id = int.Parse(rdr["movie_id"].ToString());
+                        MessageBox.Show("movie_id: " + movie_id);
                     }
+                    buttonClicked.Invoke("movieselect_next", e);
                     conn.Close();
-            
+                }
+            }       
         }
 
 
@@ -168,6 +171,11 @@ namespace ticket
                 e.Graphics.DrawString(sOoutput, e.Font,
                     ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Black : new SolidBrush(e.ForeColor), fpos, e.Bounds.Top);
             }
+        }
+
+        private void listBox_time_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isSelected_time = true;
         }
     }
 }

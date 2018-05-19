@@ -132,11 +132,9 @@
     </Compile>
     <Compile Include="page_auditorium.cs">
       <SubType>UserControl</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="page_auditorium.Designer.cs">
+    <Compile Include="page_auditorium.designer.cs">
       <DependentUpon>page_auditorium.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="page_movie_select.cs">
       <SubType>UserControl</SubType>
@@ -157,7 +155,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="page_auditorium.resx">
       <DependentUpon>page_auditorium.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="page_movie_select.resx">
       <DependentUpon>page_movie_select.cs</DependentUpon>

@@ -183,6 +183,7 @@
             this.listBox_time.Size = new System.Drawing.Size(196, 365);
             this.listBox_time.TabIndex = 1;
             this.listBox_time.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox_time_DrawItem);
+            this.listBox_time.SelectedIndexChanged += new System.EventHandler(this.listBox_time_SelectedIndexChanged);
             // 
             // panel8
             // 

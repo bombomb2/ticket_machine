@@ -88,8 +88,8 @@ namespace ticket
                     page_auditorium1.Visible = true;
                     break;
                 case "구매":
-                    //page_auditorium1.Visible = false;                    
-                    login.ShowDialog();
+                    page_auditorium1.Visible = false;
+                    page21.Visible = true;          
                     break;               
             }           
 

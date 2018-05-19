@@ -1,6 +1,3 @@
-D:\Android\mobileProgramming\ticket_machine\bin\Debug\page_auditorium.resx
-D:\Android\mobileProgramming\ticket_machine\bin\Debug\page_auditorium.cs
-D:\Android\mobileProgramming\ticket_machine\bin\Debug\page_auditorium.Designer.cs
 D:\Android\mobileProgramming\ticket_machine\bin\Debug\ticket.exe.config
 D:\Android\mobileProgramming\ticket_machine\bin\Debug\ticket.exe
 D:\Android\mobileProgramming\ticket_machine\bin\Debug\ticket.pdb
