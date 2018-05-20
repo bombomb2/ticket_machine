@@ -15,9 +15,11 @@ namespace ticket
     {
         string temp_id = "";
         string temp_pw = "";
-        SQLiteConnection conn = null;       
-        public Form_login()
-        {
+        SQLiteConnection conn = null;
+        public static int join = 0;
+        Form_signup signup;
+        public Form_login()        {
+            
             InitializeComponent();
             conn = new SQLiteConnection("Data source=" + Form1.path2 + ";Version=3;");
             
@@ -25,7 +27,6 @@ namespace ticket
         private void button_Click(object sender, EventArgs e)
         {
 
-            label2.Text = sender.ToString();
             temp_id = text_id.Text.ToString();
             temp_pw = text_pw.Text.ToString();
 
@@ -42,13 +43,13 @@ namespace ticket
                 case "로그인":                    
                     while (read.Read())
                     {
-                        label2.Text += read["user"].ToString() + read["password"].ToString();
-                        label3.Text += temp_id + temp_pw;
+                        
                         if (read["user"].ToString().Equals(temp_id) && read["password"].ToString().Equals(temp_pw))
                         {
                             Form1.login_check = 1;
                             text_id.Text = "";
                             text_pw.Text = "";
+                            Form1.login_check = 1;
                             this.Close();
                             break;
                         }                        
@@ -58,14 +59,17 @@ namespace ticket
                 case "취소":
                     this.Close();
                     break;
+
+                case "회원가입":
+                    signup = new Form_signup();
+                    signup.ShowDialog();
+                    break; 
+                default:
+                    MessageBox.Show("아직 구현되지 않았습니다");
+                    break;
                 
-            }
-            if (Form1.login_check != 1)
-            {
-                MessageBox.Show("아이디 혹은 비밀번호가 틀렸습니다.");
-                text_id.Text = "";
-                text_pw.Text = "";
-            }
+            }           
+            
             
             read.Close();
             conn.Close();

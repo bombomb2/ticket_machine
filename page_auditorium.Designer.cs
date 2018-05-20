@@ -130,6 +130,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.total_price = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.adult_0 = new System.Windows.Forms.Button();
+            this.teen_0 = new System.Windows.Forms.Button();
+            this.kid_0 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -979,7 +983,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 9;
-            this.label9.Text = "어른";
+            this.label9.Text = "성인";
             // 
             // label8
             // 
@@ -1004,7 +1008,7 @@
             this.adult_1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.adult_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.adult_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.adult_1.Location = new System.Drawing.Point(85, 37);
+            this.adult_1.Location = new System.Drawing.Point(122, 37);
             this.adult_1.Name = "adult_1";
             this.adult_1.Size = new System.Drawing.Size(30, 19);
             this.adult_1.TabIndex = 1;
@@ -1017,7 +1021,7 @@
             this.adult_2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.adult_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.adult_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.adult_2.Location = new System.Drawing.Point(120, 37);
+            this.adult_2.Location = new System.Drawing.Point(157, 37);
             this.adult_2.Name = "adult_2";
             this.adult_2.Size = new System.Drawing.Size(30, 19);
             this.adult_2.TabIndex = 1;
@@ -1030,7 +1034,7 @@
             this.adult_3.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.adult_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.adult_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.adult_3.Location = new System.Drawing.Point(154, 37);
+            this.adult_3.Location = new System.Drawing.Point(191, 37);
             this.adult_3.Name = "adult_3";
             this.adult_3.Size = new System.Drawing.Size(30, 19);
             this.adult_3.TabIndex = 1;
@@ -1043,7 +1047,7 @@
             this.adult_4.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.adult_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.adult_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.adult_4.Location = new System.Drawing.Point(189, 37);
+            this.adult_4.Location = new System.Drawing.Point(226, 37);
             this.adult_4.Name = "adult_4";
             this.adult_4.Size = new System.Drawing.Size(30, 19);
             this.adult_4.TabIndex = 1;
@@ -1056,7 +1060,7 @@
             this.adult_5.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.adult_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.adult_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.adult_5.Location = new System.Drawing.Point(224, 37);
+            this.adult_5.Location = new System.Drawing.Point(261, 37);
             this.adult_5.Name = "adult_5";
             this.adult_5.Size = new System.Drawing.Size(30, 19);
             this.adult_5.TabIndex = 1;
@@ -1069,7 +1073,7 @@
             this.adult_6.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.adult_6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.adult_6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.adult_6.Location = new System.Drawing.Point(259, 37);
+            this.adult_6.Location = new System.Drawing.Point(296, 37);
             this.adult_6.Name = "adult_6";
             this.adult_6.Size = new System.Drawing.Size(30, 19);
             this.adult_6.TabIndex = 1;
@@ -1082,7 +1086,7 @@
             this.adult_7.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.adult_7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.adult_7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.adult_7.Location = new System.Drawing.Point(294, 37);
+            this.adult_7.Location = new System.Drawing.Point(331, 37);
             this.adult_7.Name = "adult_7";
             this.adult_7.Size = new System.Drawing.Size(30, 19);
             this.adult_7.TabIndex = 1;
@@ -1095,7 +1099,7 @@
             this.adult_8.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.adult_8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.adult_8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.adult_8.Location = new System.Drawing.Point(329, 37);
+            this.adult_8.Location = new System.Drawing.Point(366, 37);
             this.adult_8.Name = "adult_8";
             this.adult_8.Size = new System.Drawing.Size(30, 19);
             this.adult_8.TabIndex = 1;
@@ -1108,7 +1112,7 @@
             this.teen_1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.teen_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teen_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.teen_1.Location = new System.Drawing.Point(85, 62);
+            this.teen_1.Location = new System.Drawing.Point(122, 62);
             this.teen_1.Name = "teen_1";
             this.teen_1.Size = new System.Drawing.Size(30, 19);
             this.teen_1.TabIndex = 1;
@@ -1121,7 +1125,7 @@
             this.teen_2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.teen_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teen_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.teen_2.Location = new System.Drawing.Point(120, 62);
+            this.teen_2.Location = new System.Drawing.Point(157, 62);
             this.teen_2.Name = "teen_2";
             this.teen_2.Size = new System.Drawing.Size(30, 19);
             this.teen_2.TabIndex = 1;
@@ -1134,7 +1138,7 @@
             this.teen_3.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.teen_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teen_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.teen_3.Location = new System.Drawing.Point(154, 62);
+            this.teen_3.Location = new System.Drawing.Point(191, 62);
             this.teen_3.Name = "teen_3";
             this.teen_3.Size = new System.Drawing.Size(30, 19);
             this.teen_3.TabIndex = 1;
@@ -1147,7 +1151,7 @@
             this.teen_4.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.teen_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teen_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.teen_4.Location = new System.Drawing.Point(189, 62);
+            this.teen_4.Location = new System.Drawing.Point(226, 62);
             this.teen_4.Name = "teen_4";
             this.teen_4.Size = new System.Drawing.Size(30, 19);
             this.teen_4.TabIndex = 1;
@@ -1160,7 +1164,7 @@
             this.teen_5.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.teen_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teen_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.teen_5.Location = new System.Drawing.Point(224, 62);
+            this.teen_5.Location = new System.Drawing.Point(261, 62);
             this.teen_5.Name = "teen_5";
             this.teen_5.Size = new System.Drawing.Size(30, 19);
             this.teen_5.TabIndex = 1;
@@ -1173,7 +1177,7 @@
             this.teen_6.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.teen_6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teen_6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.teen_6.Location = new System.Drawing.Point(259, 62);
+            this.teen_6.Location = new System.Drawing.Point(296, 62);
             this.teen_6.Name = "teen_6";
             this.teen_6.Size = new System.Drawing.Size(30, 19);
             this.teen_6.TabIndex = 1;
@@ -1186,7 +1190,7 @@
             this.teen_7.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.teen_7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teen_7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.teen_7.Location = new System.Drawing.Point(294, 62);
+            this.teen_7.Location = new System.Drawing.Point(331, 62);
             this.teen_7.Name = "teen_7";
             this.teen_7.Size = new System.Drawing.Size(30, 19);
             this.teen_7.TabIndex = 1;
@@ -1199,7 +1203,7 @@
             this.teen_8.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.teen_8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.teen_8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.teen_8.Location = new System.Drawing.Point(329, 62);
+            this.teen_8.Location = new System.Drawing.Point(366, 62);
             this.teen_8.Name = "teen_8";
             this.teen_8.Size = new System.Drawing.Size(30, 19);
             this.teen_8.TabIndex = 1;
@@ -1212,7 +1216,7 @@
             this.kid_1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.kid_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kid_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.kid_1.Location = new System.Drawing.Point(85, 87);
+            this.kid_1.Location = new System.Drawing.Point(122, 87);
             this.kid_1.Name = "kid_1";
             this.kid_1.Size = new System.Drawing.Size(30, 19);
             this.kid_1.TabIndex = 1;
@@ -1225,7 +1229,7 @@
             this.kid_2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.kid_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kid_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.kid_2.Location = new System.Drawing.Point(120, 87);
+            this.kid_2.Location = new System.Drawing.Point(157, 87);
             this.kid_2.Name = "kid_2";
             this.kid_2.Size = new System.Drawing.Size(30, 19);
             this.kid_2.TabIndex = 1;
@@ -1238,7 +1242,7 @@
             this.kid_3.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.kid_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kid_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.kid_3.Location = new System.Drawing.Point(154, 87);
+            this.kid_3.Location = new System.Drawing.Point(191, 87);
             this.kid_3.Name = "kid_3";
             this.kid_3.Size = new System.Drawing.Size(30, 19);
             this.kid_3.TabIndex = 1;
@@ -1251,7 +1255,7 @@
             this.kid_4.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.kid_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kid_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.kid_4.Location = new System.Drawing.Point(189, 87);
+            this.kid_4.Location = new System.Drawing.Point(226, 87);
             this.kid_4.Name = "kid_4";
             this.kid_4.Size = new System.Drawing.Size(30, 19);
             this.kid_4.TabIndex = 1;
@@ -1264,7 +1268,7 @@
             this.kid_5.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.kid_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kid_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.kid_5.Location = new System.Drawing.Point(224, 87);
+            this.kid_5.Location = new System.Drawing.Point(261, 87);
             this.kid_5.Name = "kid_5";
             this.kid_5.Size = new System.Drawing.Size(30, 19);
             this.kid_5.TabIndex = 1;
@@ -1277,7 +1281,7 @@
             this.kid_6.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.kid_6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kid_6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.kid_6.Location = new System.Drawing.Point(259, 87);
+            this.kid_6.Location = new System.Drawing.Point(296, 87);
             this.kid_6.Name = "kid_6";
             this.kid_6.Size = new System.Drawing.Size(30, 19);
             this.kid_6.TabIndex = 1;
@@ -1290,7 +1294,7 @@
             this.kid_7.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.kid_7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kid_7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.kid_7.Location = new System.Drawing.Point(294, 87);
+            this.kid_7.Location = new System.Drawing.Point(331, 87);
             this.kid_7.Name = "kid_7";
             this.kid_7.Size = new System.Drawing.Size(30, 19);
             this.kid_7.TabIndex = 1;
@@ -1303,7 +1307,7 @@
             this.kid_8.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.kid_8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.kid_8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.kid_8.Location = new System.Drawing.Point(329, 87);
+            this.kid_8.Location = new System.Drawing.Point(366, 87);
             this.kid_8.Name = "kid_8";
             this.kid_8.Size = new System.Drawing.Size(30, 19);
             this.kid_8.TabIndex = 1;
@@ -1374,11 +1378,61 @@
             this.label17.TabIndex = 9;
             this.label17.Text = "총금액";
             // 
+            // adult_0
+            // 
+            this.adult_0.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.adult_0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adult_0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.adult_0.Location = new System.Drawing.Point(87, 37);
+            this.adult_0.Name = "adult_0";
+            this.adult_0.Size = new System.Drawing.Size(30, 19);
+            this.adult_0.TabIndex = 1;
+            this.adult_0.Text = "0";
+            this.adult_0.UseVisualStyleBackColor = false;
+            this.adult_0.Click += new System.EventHandler(this.button_click);
+            // 
+            // teen_0
+            // 
+            this.teen_0.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.teen_0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.teen_0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.teen_0.Location = new System.Drawing.Point(87, 62);
+            this.teen_0.Name = "teen_0";
+            this.teen_0.Size = new System.Drawing.Size(30, 19);
+            this.teen_0.TabIndex = 1;
+            this.teen_0.Text = "0";
+            this.teen_0.UseVisualStyleBackColor = false;
+            this.teen_0.Click += new System.EventHandler(this.button_click);
+            // 
+            // kid_0
+            // 
+            this.kid_0.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.kid_0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.kid_0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.kid_0.Location = new System.Drawing.Point(87, 87);
+            this.kid_0.Name = "kid_0";
+            this.kid_0.Size = new System.Drawing.Size(30, 19);
+            this.kid_0.TabIndex = 1;
+            this.kid_0.Text = "0";
+            this.kid_0.UseVisualStyleBackColor = false;
+            this.kid_0.Click += new System.EventHandler(this.button_click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(550, 62);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 12);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "label12";
+            // 
             // page_auditorium
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.adult_8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -1431,7 +1485,6 @@
             this.Controls.Add(this.button_e5);
             this.Controls.Add(this.kid_8);
             this.Controls.Add(this.teen_8);
-            this.Controls.Add(this.adult_8);
             this.Controls.Add(this.button_a8);
             this.Controls.Add(this.button_d5);
             this.Controls.Add(this.button_b6);
@@ -1476,8 +1529,11 @@
             this.Controls.Add(this.teen_2);
             this.Controls.Add(this.button_b1);
             this.Controls.Add(this.adult_2);
+            this.Controls.Add(this.kid_0);
+            this.Controls.Add(this.teen_0);
             this.Controls.Add(this.kid_1);
             this.Controls.Add(this.teen_1);
+            this.Controls.Add(this.adult_0);
             this.Controls.Add(this.button_a2);
             this.Controls.Add(this.adult_1);
             this.Controls.Add(this.button_a1);
@@ -1595,6 +1651,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label total_price;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button adult_0;
+        private System.Windows.Forms.Button teen_0;
+        private System.Windows.Forms.Button kid_0;
+        private System.Windows.Forms.Label label12;
 
     }
 }

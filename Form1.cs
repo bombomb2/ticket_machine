@@ -31,7 +31,7 @@ namespace ticket
             page21.ButtonClicked += button_Click;            
             page_auditorium1.ButtonClicked += button_Click;
             page_movie_select1.ButtonClicked += button_Click;
-            login = new Form_login();
+            login = new Form_login();           
             conn = new SQLiteConnection("Data source=" + path2 + ";Version=3");
            
         }    
@@ -60,14 +60,9 @@ namespace ticket
             string temp = sender.ToString();
             //MessageBox.Show(temp);      
             switch(temp)
-            {
-                case "회원가입":              
-             //   page11.Visible = false;
-             //   page21.Visible = true;
-                    break;
+            {               
                 case "예약확인":
-                 //   page21.Visible = false;
-                //    page11.Visible = true;
+              
                     break;
                 case "영화예매":
                     //   page21.Visible = false;
@@ -83,13 +78,15 @@ namespace ticket
                     break;
 
                 case "movieselect_next":
-                    page_movie_select1.Visible = false;
                     login.ShowDialog();
-                    page_auditorium1.Visible = true;
+                    if (login_check == 1)
+                    {
+                        page_movie_select1.Visible = false;
+                        page_auditorium1.Visible = true;
+                    }
                     break;
                 case "구매":
-                    page_auditorium1.Visible = false;
-                    page21.Visible = true;          
+                    page_auditorium1.Visible = false;                    
                     break;               
             }           
 

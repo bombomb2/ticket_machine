@@ -41,14 +41,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // text_id
             // 
             this.text_id.Font = new System.Drawing.Font("굴림", 20F);
-            this.text_id.Location = new System.Drawing.Point(134, 90);
+            this.text_id.Location = new System.Drawing.Point(80, 78);
             this.text_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.text_id.Name = "text_id";
             this.text_id.Size = new System.Drawing.Size(392, 38);
@@ -57,7 +55,7 @@
             // text_pw
             // 
             this.text_pw.Font = new System.Drawing.Font("굴림", 20F);
-            this.text_pw.Location = new System.Drawing.Point(134, 126);
+            this.text_pw.Location = new System.Drawing.Point(80, 114);
             this.text_pw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.text_pw.Name = "text_pw";
             this.text_pw.PasswordChar = '*';
@@ -67,7 +65,7 @@
             // button_login
             // 
             this.button_login.BackColor = System.Drawing.Color.Red;
-            this.button_login.Location = new System.Drawing.Point(133, 167);
+            this.button_login.Location = new System.Drawing.Point(79, 155);
             this.button_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(396, 34);
@@ -78,7 +76,7 @@
             // 
             // button_nobuy
             // 
-            this.button_nobuy.Location = new System.Drawing.Point(404, 262);
+            this.button_nobuy.Location = new System.Drawing.Point(350, 250);
             this.button_nobuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_nobuy.Name = "button_nobuy";
             this.button_nobuy.Size = new System.Drawing.Size(140, 31);
@@ -90,7 +88,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(144, 262);
+            this.label4.Location = new System.Drawing.Point(90, 250);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(233, 12);
             this.label4.TabIndex = 8;
@@ -99,7 +97,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(200, 281);
+            this.label5.Location = new System.Drawing.Point(146, 269);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 12);
             this.label5.TabIndex = 9;
@@ -108,7 +106,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(117, 246);
+            this.label6.Location = new System.Drawing.Point(63, 234);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(383, 12);
             this.label6.TabIndex = 10;
@@ -116,7 +114,7 @@
             // 
             // button_findpw
             // 
-            this.button_findpw.Location = new System.Drawing.Point(273, 206);
+            this.button_findpw.Location = new System.Drawing.Point(219, 194);
             this.button_findpw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_findpw.Name = "button_findpw";
             this.button_findpw.Size = new System.Drawing.Size(104, 31);
@@ -127,7 +125,7 @@
             // 
             // button_findid
             // 
-            this.button_findid.Location = new System.Drawing.Point(134, 206);
+            this.button_findid.Location = new System.Drawing.Point(80, 194);
             this.button_findid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_findid.Name = "button_findid";
             this.button_findid.Size = new System.Drawing.Size(104, 31);
@@ -138,7 +136,7 @@
             // 
             // button_signin
             // 
-            this.button_signin.Location = new System.Drawing.Point(422, 206);
+            this.button_signin.Location = new System.Drawing.Point(368, 194);
             this.button_signin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_signin.Name = "button_signin";
             this.button_signin.Size = new System.Drawing.Size(104, 31);
@@ -167,7 +165,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(608, 410);
+            this.button7.Location = new System.Drawing.Point(424, 327);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(66, 18);
@@ -176,31 +174,11 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(146, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 12);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(144, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 12);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "label3";
-            // 
-            // login
+            // Form_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(564, 391);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label7);
@@ -215,7 +193,7 @@
             this.Controls.Add(this.text_pw);
             this.Controls.Add(this.text_id);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "login";
+            this.Name = "Form_login";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,8 +215,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }
 
