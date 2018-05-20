@@ -37,7 +37,6 @@
             this.pass_txt = new System.Windows.Forms.Label();
             this.pass_Box = new System.Windows.Forms.TextBox();
             this.check_txt = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.check_Box = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,114 +45,114 @@
             // name_txt
             // 
             this.name_txt.AutoSize = true;
-            this.name_txt.Font = new System.Drawing.Font("굴림", 15F);
-            this.name_txt.Location = new System.Drawing.Point(67, 57);
+            this.name_txt.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.name_txt.Location = new System.Drawing.Point(54, 53);
             this.name_txt.Name = "name_txt";
-            this.name_txt.Size = new System.Drawing.Size(49, 20);
+            this.name_txt.Size = new System.Drawing.Size(42, 21);
             this.name_txt.TabIndex = 0;
             this.name_txt.Text = "이름";
             // 
             // name_Box
             // 
+            this.name_Box.BackColor = System.Drawing.SystemColors.Control;
+            this.name_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.name_Box.Font = new System.Drawing.Font("굴림", 15F);
-            this.name_Box.Location = new System.Drawing.Point(209, 54);
+            this.name_Box.Location = new System.Drawing.Point(171, 52);
             this.name_Box.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.name_Box.Name = "name_Box";
-            this.name_Box.Size = new System.Drawing.Size(112, 30);
+            this.name_Box.Size = new System.Drawing.Size(112, 23);
             this.name_Box.TabIndex = 1;
             // 
             // phone_txt
             // 
             this.phone_txt.AutoSize = true;
-            this.phone_txt.Font = new System.Drawing.Font("굴림", 15F);
-            this.phone_txt.Location = new System.Drawing.Point(67, 106);
+            this.phone_txt.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.phone_txt.Location = new System.Drawing.Point(54, 99);
             this.phone_txt.Name = "phone_txt";
-            this.phone_txt.Size = new System.Drawing.Size(69, 20);
+            this.phone_txt.Size = new System.Drawing.Size(58, 21);
             this.phone_txt.TabIndex = 0;
             this.phone_txt.Text = "휴대폰";
             // 
             // phone_Box
             // 
+            this.phone_Box.BackColor = System.Drawing.SystemColors.Control;
+            this.phone_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phone_Box.Font = new System.Drawing.Font("굴림", 15F);
-            this.phone_Box.Location = new System.Drawing.Point(209, 103);
+            this.phone_Box.Location = new System.Drawing.Point(171, 100);
             this.phone_Box.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.phone_Box.Name = "phone_Box";
-            this.phone_Box.Size = new System.Drawing.Size(181, 30);
+            this.phone_Box.Size = new System.Drawing.Size(181, 23);
             this.phone_Box.TabIndex = 2;
             // 
             // id_txt
             // 
             this.id_txt.AutoSize = true;
-            this.id_txt.Font = new System.Drawing.Font("굴림", 15F);
-            this.id_txt.Location = new System.Drawing.Point(67, 188);
+            this.id_txt.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.id_txt.Location = new System.Drawing.Point(54, 147);
             this.id_txt.Name = "id_txt";
-            this.id_txt.Size = new System.Drawing.Size(69, 20);
+            this.id_txt.Size = new System.Drawing.Size(58, 21);
             this.id_txt.TabIndex = 0;
             this.id_txt.Text = "아이디";
             // 
             // ID_Box
             // 
+            this.ID_Box.BackColor = System.Drawing.SystemColors.Control;
+            this.ID_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ID_Box.Font = new System.Drawing.Font("굴림", 15F);
-            this.ID_Box.Location = new System.Drawing.Point(209, 185);
+            this.ID_Box.Location = new System.Drawing.Point(171, 151);
             this.ID_Box.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ID_Box.Name = "ID_Box";
-            this.ID_Box.Size = new System.Drawing.Size(181, 30);
+            this.ID_Box.Size = new System.Drawing.Size(181, 23);
             this.ID_Box.TabIndex = 3;
             // 
             // pass_txt
             // 
             this.pass_txt.AutoSize = true;
-            this.pass_txt.Font = new System.Drawing.Font("굴림", 15F);
-            this.pass_txt.Location = new System.Drawing.Point(67, 231);
+            this.pass_txt.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.pass_txt.Location = new System.Drawing.Point(54, 196);
             this.pass_txt.Name = "pass_txt";
-            this.pass_txt.Size = new System.Drawing.Size(89, 20);
+            this.pass_txt.Size = new System.Drawing.Size(74, 21);
             this.pass_txt.TabIndex = 0;
             this.pass_txt.Text = "비밀번호";
             // 
             // pass_Box
             // 
+            this.pass_Box.BackColor = System.Drawing.SystemColors.Control;
+            this.pass_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pass_Box.Font = new System.Drawing.Font("굴림", 15F);
-            this.pass_Box.Location = new System.Drawing.Point(209, 228);
+            this.pass_Box.Location = new System.Drawing.Point(171, 194);
             this.pass_Box.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pass_Box.Name = "pass_Box";
             this.pass_Box.PasswordChar = '*';
-            this.pass_Box.Size = new System.Drawing.Size(181, 30);
+            this.pass_Box.Size = new System.Drawing.Size(181, 23);
             this.pass_Box.TabIndex = 4;
             // 
             // check_txt
             // 
             this.check_txt.AutoSize = true;
-            this.check_txt.Font = new System.Drawing.Font("굴림", 15F);
-            this.check_txt.Location = new System.Drawing.Point(67, 281);
+            this.check_txt.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.check_txt.Location = new System.Drawing.Point(54, 246);
             this.check_txt.Name = "check_txt";
-            this.check_txt.Size = new System.Drawing.Size(136, 20);
+            this.check_txt.Size = new System.Drawing.Size(112, 21);
             this.check_txt.TabIndex = 0;
             this.check_txt.Text = "비밀번호 확인";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 15F);
-            this.label7.Location = new System.Drawing.Point(35, 157);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 20);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "-------------";
-            // 
             // check_Box
             // 
+            this.check_Box.BackColor = System.Drawing.SystemColors.Control;
+            this.check_Box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.check_Box.Font = new System.Drawing.Font("굴림", 15F);
-            this.check_Box.Location = new System.Drawing.Point(209, 278);
+            this.check_Box.Location = new System.Drawing.Point(171, 244);
             this.check_Box.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.check_Box.Name = "check_Box";
             this.check_Box.PasswordChar = '*';
-            this.check_Box.Size = new System.Drawing.Size(181, 30);
+            this.check_Box.Size = new System.Drawing.Size(181, 23);
             this.check_Box.TabIndex = 5;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("굴림", 20F);
-            this.button1.Location = new System.Drawing.Point(174, 326);
+            this.button1.Location = new System.Drawing.Point(152, 298);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 41);
@@ -164,7 +163,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(410, 189);
+            this.button2.Location = new System.Drawing.Point(372, 149);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 25);
@@ -176,11 +175,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 391);
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.ClientSize = new System.Drawing.Size(490, 377);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.check_Box);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.pass_Box);
             this.Controls.Add(this.ID_Box);
             this.Controls.Add(this.phone_Box);
@@ -192,6 +191,7 @@
             this.Controls.Add(this.name_txt);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_signup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,7 +209,6 @@
         private System.Windows.Forms.Label pass_txt;
         private System.Windows.Forms.TextBox pass_Box;
         private System.Windows.Forms.Label check_txt;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox check_Box;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

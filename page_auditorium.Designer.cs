@@ -133,7 +133,6 @@
             this.adult_0 = new System.Windows.Forms.Button();
             this.teen_0 = new System.Windows.Forms.Button();
             this.kid_0 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -1417,21 +1416,11 @@
             this.kid_0.UseVisualStyleBackColor = false;
             this.kid_0.Click += new System.EventHandler(this.button_click);
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(550, 62);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 12);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "label12";
-            // 
             // page_auditorium
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.adult_8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -1654,7 +1643,6 @@
         private System.Windows.Forms.Button adult_0;
         private System.Windows.Forms.Button teen_0;
         private System.Windows.Forms.Button kid_0;
-        private System.Windows.Forms.Label label12;
 
     }
 }

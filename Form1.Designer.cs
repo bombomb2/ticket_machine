@@ -30,8 +30,8 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.page_auditorium1 = new ticket.page_auditorium();
-            this.page21 = new ticket.page2();
             this.page_movie_select1 = new ticket.page_movie_select();
+            this.page21 = new ticket.page2();
             this.SuspendLayout();
             // 
             // label4
@@ -48,25 +48,25 @@
             // page_auditorium1
             // 
             this.page_auditorium1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.page_auditorium1.Location = new System.Drawing.Point(-3, 26);
+            this.page_auditorium1.Location = new System.Drawing.Point(0, 27);
             this.page_auditorium1.Name = "page_auditorium1";
-            this.page_auditorium1.Size = new System.Drawing.Size(760, 418);
+            this.page_auditorium1.Size = new System.Drawing.Size(760, 408);
             this.page_auditorium1.TabIndex = 10;
+            // 
+            // page_movie_select1
+            // 
+            this.page_movie_select1.Location = new System.Drawing.Point(0, 28);
+            this.page_movie_select1.Name = "page_movie_select1";
+            this.page_movie_select1.Size = new System.Drawing.Size(762, 408);
+            this.page_movie_select1.TabIndex = 12;
             // 
             // page21
             // 
             this.page21.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.page21.Location = new System.Drawing.Point(-3, 9);
+            this.page21.Location = new System.Drawing.Point(0, 28);
             this.page21.Name = "page21";
-            this.page21.Size = new System.Drawing.Size(762, 435);
+            this.page21.Size = new System.Drawing.Size(762, 419);
             this.page21.TabIndex = 11;
-            // 
-            // page_movie_select1
-            // 
-            this.page_movie_select1.Location = new System.Drawing.Point(12, 28);
-            this.page_movie_select1.Name = "page_movie_select1";
-            this.page_movie_select1.Size = new System.Drawing.Size(736, 401);
-            this.page_movie_select1.TabIndex = 12;
             // 
             // Form1
             // 

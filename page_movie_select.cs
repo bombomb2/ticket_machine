@@ -127,10 +127,11 @@ namespace ticket //남은 좌석수 표시하기
                     while (rdr.Read())
                     {
                         movie_id = int.Parse(rdr["movie_id"].ToString());
-                        MessageBox.Show("movie_id: " + movie_id);
+                       // MessageBox.Show("movie_id: " + movie_id);
                     }
                     buttonClicked.Invoke("movieselect_next", e);
-                    conn.Close();
+                    if(Form1.login_check==1)
+                        conn.Close();
                 }
                 else
                 {

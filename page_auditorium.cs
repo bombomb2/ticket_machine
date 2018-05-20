@@ -122,22 +122,22 @@ namespace ticket
                 {
                     if (button_name[0].Equals("kid") || button_name[0].Equals("teen") || button_name[0].Equals("adult"))
                     {                       
-                            set_seatcount();
-                            label12.Text = check.ToString();                       
+                            //set_seatcount();                            
                             
                     }
                     else
                     {
-                        if (select_count[3] > 0)
+                        seat_count();
+                        /*if (select_count[3] > 0)
                         {                            
-                            seat_count();
-                            label12.Text = check.ToString();
+                            seat_count();                            
                             result_price(check);                            
                         }
                         else
                             MessageBox.Show("좌석을 선택해 주세요");
+                         * */
                     }
-
+                     
                 }
             }
 
@@ -145,7 +145,7 @@ namespace ticket
         private void seat_count()
         {
             print_seat = "";
-            if (count < select_count[3])
+            if (count < 5)
             {
 
                 if (!seat_arr.Contains(button_name[button_name.Length - 1]))
@@ -154,7 +154,7 @@ namespace ticket
                     temp_seatarr.Add(button_name[button_name.Length - 1]);
                     color = btn.BackColor;
                     btn.BackColor = Color.White;
-                    now_seat_count[check]--;
+                   // now_seat_count[check]--;
                     count++;
                 }
                 else
@@ -163,7 +163,7 @@ namespace ticket
                     temp_seatarr.Remove(button_name[button_name.Length - 1]);
                     btn.BackColor = color;
                     count--;
-                    now_seat_count[check]++;
+                   // now_seat_count[check]++;
                 }
             }
             else
@@ -174,7 +174,7 @@ namespace ticket
                     temp_seatarr.Remove(button_name[button_name.Length - 1]);
                     btn.BackColor = color;
                     count--;
-                    now_seat_count[check]++;
+                   // now_seat_count[check]++;
                 }
                 else
                     MessageBox.Show("선택할 수 있는 범위를 넘었습니다.");
