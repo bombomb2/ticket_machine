@@ -132,6 +132,10 @@ namespace ticket //남은 좌석수 표시하기
                     buttonClicked.Invoke("movieselect_next", e);
                     conn.Close();
                 }
+                else
+                {
+                    MessageBox.Show("영화 시간을 선택해주세요.");
+                }
             }       
         }
 
