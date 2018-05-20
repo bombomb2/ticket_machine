@@ -45,26 +45,31 @@
             // 
             // text_id
             // 
+            this.text_id.BackColor = System.Drawing.SystemColors.Control;
+            this.text_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.text_id.Font = new System.Drawing.Font("굴림", 20F);
             this.text_id.Location = new System.Drawing.Point(80, 78);
             this.text_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.text_id.Name = "text_id";
-            this.text_id.Size = new System.Drawing.Size(392, 38);
+            this.text_id.Size = new System.Drawing.Size(392, 31);
             this.text_id.TabIndex = 3;
             // 
             // text_pw
             // 
+            this.text_pw.BackColor = System.Drawing.SystemColors.Control;
+            this.text_pw.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.text_pw.Font = new System.Drawing.Font("굴림", 20F);
             this.text_pw.Location = new System.Drawing.Point(80, 114);
             this.text_pw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.text_pw.Name = "text_pw";
             this.text_pw.PasswordChar = '*';
-            this.text_pw.Size = new System.Drawing.Size(392, 38);
+            this.text_pw.Size = new System.Drawing.Size(392, 31);
             this.text_pw.TabIndex = 3;
             // 
             // button_login
             // 
             this.button_login.BackColor = System.Drawing.Color.Red;
+            this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_login.Location = new System.Drawing.Point(79, 155);
             this.button_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_login.Name = "button_login";
@@ -168,7 +173,7 @@
             this.button7.Location = new System.Drawing.Point(424, 327);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(66, 18);
+            this.button7.Size = new System.Drawing.Size(66, 24);
             this.button7.TabIndex = 40;
             this.button7.Text = "취소";
             this.button7.UseVisualStyleBackColor = true;
@@ -178,6 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(564, 391);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -194,6 +200,7 @@
             this.Controls.Add(this.text_id);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
