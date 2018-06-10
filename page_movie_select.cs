@@ -144,18 +144,18 @@ namespace ticket //남은 좌석수 표시하기
                        // MessageBox.Show("movie_id: " + movie_id);
                     }
                     buttonClicked.Invoke("movieselect_next", e);
-<<<<<<< HEAD
+
                  //   conn.Close();
                     if(Form1.login_check==1)
                         conn.Close();
-=======
+
 
                  //   conn.Close();
 
                     if(Form1.login_check==1)
                         conn.Close();
 
->>>>>>> 43b3d5d6fe245b9f8ef737d2e7ddfa0f8d4be48e
+
                 }
                 else
                 {
