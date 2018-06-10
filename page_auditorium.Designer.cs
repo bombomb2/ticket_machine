@@ -953,22 +953,24 @@
             // 
             // button_purchase
             // 
+            this.button_purchase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
             this.button_purchase.Location = new System.Drawing.Point(644, 379);
             this.button_purchase.Name = "button_purchase";
             this.button_purchase.Size = new System.Drawing.Size(75, 23);
             this.button_purchase.TabIndex = 8;
             this.button_purchase.Text = "구매";
-            this.button_purchase.UseVisualStyleBackColor = true;
+            this.button_purchase.UseVisualStyleBackColor = false;
             this.button_purchase.Click += new System.EventHandler(this.button_click);
             // 
             // button_cancel
             // 
+            this.button_cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
             this.button_cancel.Location = new System.Drawing.Point(535, 379);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 8;
             this.button_cancel.Text = "취소";
-            this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.UseVisualStyleBackColor = false;
             this.button_cancel.Click += new System.EventHandler(this.button_click);
             // 
             // print_people
