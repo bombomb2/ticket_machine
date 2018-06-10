@@ -20,6 +20,7 @@ namespace ticket //남은 좌석수 표시하기
         public static bool isSelected_time = false;
         public int movie_id;
         private string date = "";
+        string movie_path = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "/photo/";    
 
         public delegate void OnButtonClickedEventHandler(object sender, EventArgs e);
         private OnButtonClickedEventHandler buttonClicked;
@@ -32,6 +33,7 @@ namespace ticket //남은 좌석수 표시하기
         public page_movie_select()
         {
             InitializeComponent();
+
         }
         
         public void InitListbox()
@@ -59,6 +61,8 @@ namespace ticket //남은 좌석수 표시하기
                 string rdr_date = myDate.ToString("MM월 dd일");
                 listBox_date.Items.Add(rdr_date);
             }
+            movie_picture.ImageLocation = movie_path + "default.jpg";
+            movie_picture.SizeMode = PictureBoxSizeMode.StretchImage;
             
         }
         private void listBox_movie_select_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +72,16 @@ namespace ticket //남은 좌석수 표시하기
                 isSelected_movie = true;
                 loadTime();
             }
+
+            string sql = "SELECT DISTINCT content,title_num from movie where title = '" + listBox_movie_select.Text + "';";
+            SQLiteCommand cmd2 = new SQLiteCommand(sql, conn);
+            SQLiteDataReader rdr = cmd2.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                movie_content.Text = (rdr["content"].ToString());
+                movie_picture.ImageLocation = movie_path + rdr["title_num"] + ".jpg";
+            }           
         }
 
         private void listBox_date_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,9 +144,18 @@ namespace ticket //남은 좌석수 표시하기
                        // MessageBox.Show("movie_id: " + movie_id);
                     }
                     buttonClicked.Invoke("movieselect_next", e);
+<<<<<<< HEAD
                  //   conn.Close();
                     if(Form1.login_check==1)
                         conn.Close();
+=======
+
+                 //   conn.Close();
+
+                    if(Form1.login_check==1)
+                        conn.Close();
+
+>>>>>>> 43b3d5d6fe245b9f8ef737d2e7ddfa0f8d4be48e
                 }
                 else
                 {
@@ -148,6 +171,7 @@ namespace ticket //남은 좌석수 표시하기
                 Graphics g = e.Graphics;
                 Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Red : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
                 g.FillRectangle(brush, e.Bounds);
+            if(e.Index>-1)
                 e.Graphics.DrawString(listBox_movie_select.Items[e.Index].ToString(), e.Font,
                     ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Black : new SolidBrush(e.ForeColor), e.Bounds, StringFormat.GenericDefault); //ForeColor 수정하는 곳 
                 e.DrawFocusRectangle();
