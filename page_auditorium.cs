@@ -18,11 +18,13 @@ namespace ticket
         Color color;
         ArrayList seat_arr = new ArrayList();//
         ArrayList temp_seatarr;//현재 선택된 좌석
-        int count = 0;//좌석 선택의 수         
-        int[] select_count = new int[4]; //사용자가 지정한 좌석수
-        int[] now_seat_count = new int[3];
+        int[] seat_count = new int[4];
+        int[] temp_seat_count = new int[3];
+        int count = 0;//좌석 선택의 수        
         int movie_id = 5;//넘어오는 값
-        int check = 9;
+        int now_click;
+        int check_zero;
+        string[] compare = new string[2];
         string[] button_text;//버튼의 텍스트값
         string[] button_name;//버튼의 이름
         string[] print_seatcount = new string[4];//좌석 정보 출력
@@ -36,7 +38,8 @@ namespace ticket
         {
             InitializeComponent();
             temp_seatarr = new ArrayList();
-            //conn = new SQLiteConnection("Data Source=" + path2  + ";Version=3;");                        
+            //conn = new SQLiteConnection("Data Source=" + path2  + ";Version=3;");    
+            seat_count[3] = 0;
         }
 
         public delegate void OnButtonClickedEventHandler(object sender, EventArgs e);
@@ -92,7 +95,7 @@ namespace ticket
         private void button_click(object sender, EventArgs e)
         {
 
-            btn = sender as Button;//sender를 버튼화 함             
+            btn = sender as Button;//sender를 버튼화 함      
             if (btn != null)//이 부분이 영화 좌석 눌렀을시
             {
                 button_text = sender.ToString().Split(' ');//버튼 텍스트 추출
@@ -110,10 +113,7 @@ namespace ticket
                         else
                             temp += seat_arr[i] + ",";
 
-                    }
-                    //string temp2 = "UPDATE timetable SET booked= '" + temp + "'WHERE movie_id= '12:20'";
-                    // SQLiteCommand cmd = new SQLiteCommand(temp2, conn);
-                    //int result = cmd.ExecuteNonQuery();
+                    }                   
                     conn.Close();
                 }
                 else if (button_text[button_text.Length - 1].Equals("취소"))
@@ -121,31 +121,33 @@ namespace ticket
                 else
                 {
                     if (button_name[0].Equals("kid") || button_name[0].Equals("teen") || button_name[0].Equals("adult"))
-                    {                       
-                            //set_seatcount();                            
-                            
+                    {                    
+                        
+                           set_seat_count();                
+                        
                     }
                     else
                     {
-                        seat_count();
-                        /*if (select_count[3] > 0)
-                        {                            
-                            seat_count();                            
-                            result_price(check);                            
+                        
+                        if (seat_count[3] > 0)
+                        {
+                            isZero();
+                            select_seat();                            
+                            print_recipt();
                         }
                         else
                             MessageBox.Show("좌석을 선택해 주세요");
-                         * */
+
                     }
-                     
+
                 }
             }
 
         }
-        private void seat_count()
-        {
+        private void select_seat()
+        {           
             print_seat = "";
-            if (count < 5)
+            if (count < seat_count[3])
             {
 
                 if (!seat_arr.Contains(button_name[button_name.Length - 1]))
@@ -154,7 +156,7 @@ namespace ticket
                     temp_seatarr.Add(button_name[button_name.Length - 1]);
                     color = btn.BackColor;
                     btn.BackColor = Color.White;
-                   // now_seat_count[check]--;
+                    temp_seat_count[check_zero]--;
                     count++;
                 }
                 else
@@ -162,8 +164,9 @@ namespace ticket
                     seat_arr.Remove(button_name[button_name.Length - 1]);
                     temp_seatarr.Remove(button_name[button_name.Length - 1]);
                     btn.BackColor = color;
+                    temp_seat_count[check_zero]++;
                     count--;
-                   // now_seat_count[check]++;
+                    // now_seat_count[check]++;
                 }
             }
             else
@@ -173,131 +176,141 @@ namespace ticket
                     seat_arr.Remove(button_name[button_name.Length - 1]);
                     temp_seatarr.Remove(button_name[button_name.Length - 1]);
                     btn.BackColor = color;
+                    temp_seat_count[check_zero]++;
                     count--;
-                   // now_seat_count[check]++;
+
+                    // now_seat_count[check]++;
                 }
                 else
                     MessageBox.Show("선택할 수 있는 범위를 넘었습니다.");
             }
+            //label16.Text = temp_seat_count[check_zero].ToString();
+            label_seat.Text = "";
             for (int i = 0; i < temp_seatarr.Count; i++)
-            {
-                if (temp_seatarr.Count - 1 != i)
-                    print_seat += temp_seatarr[i] + ",";
-                else
-                    print_seat += temp_seatarr[i];
-            }
-            label_seat.Text = print_seat;
-            check_null();
+                label_seat.Text += " "+temp_seatarr[i];
         }
-        private void set_seatcount()
+        
+        private void set_seat_count()
         {
-            int total_seat = 0;//좌석수의 맥시멈을 제한하기 위한 것
 
             switch (button_name[0])
             {
-                case "kid":
-                    select_count[2] = int.Parse(button_text[button_text.Length - 1]);
-                    if (select_count[2] != 0)
-                        print_seatcount[2] = "어린이 X " + select_count[2];
+                case "adult":
+                    if (seat_count[0] != 0) seat_count[3] -= seat_count[0];
+                    seat_count[0] = int.Parse(btn.Text);
+                    if (preview[0] != null) preview[0].BackColor = color;
+                    btn.BackColor = Color.White;                   
+                    seat_count[3] += seat_count[0];
+                    now_click = 0;
                     break;
                 case "teen":
-                    select_count[1] = int.Parse(button_text[button_text.Length - 1]);
-                    if (select_count[1] != 0)
-                        print_seatcount[1] = "청소년 X " + select_count[1];
+                    if (seat_count[1] != 0) seat_count[3] -= seat_count[1];
+                    seat_count[1] = int.Parse(btn.Text);
+                    if (preview[1] != null) preview[1].BackColor = color;
+                    btn.BackColor = Color.White;                   
+                    seat_count[3] += seat_count[1];
+                    now_click = 1;
                     break;
-                case "adult":
-                    select_count[0] = int.Parse(button_text[button_text.Length - 1]);
-                    if (select_count[0] != 0)
-                        print_seatcount[0] = "성인 X " + select_count[0];
+                case "kid":
+                    if (seat_count[2] != 0) seat_count[3] -= seat_count[2];
+                    seat_count[2] = int.Parse(btn.Text);
+                    if (preview[2] != null) preview[2].BackColor = color;
+                    btn.BackColor = Color.White;                    
+                    seat_count[3] += seat_count[2];
+                    now_click = 2;
                     break;
             }
-            total_seat = select_count[0] + select_count[1] + select_count[2];
-            select_count[3] = 0;
-            if (total_seat <= 8)
-            {
-                print_seatcount[3] = "";
-                for (int i = 0; i < 3; i++)
-                {
-                    if (print_seatcount[i] != null)
-                    {
-                        print_seatcount[3] += print_seatcount[i] + " ";
 
-                    }
-                    now_seat_count[i] = select_count[i];
-                }
-                select_count[3] = total_seat;
-                print_price.Text = print_seatcount[3];
+            if(seat_count[3] > 8) //8명이 넘으면 해당 선택 종류의 값을 0으로 초기화
+            {
+                MessageBox.Show("8명 까지만 가능");
                 switch (button_name[0])
                 {
-                    case "kid":
-                        if (preview[2] != null) preview[2].BackColor = color;
-                        btn.BackColor = Color.White;
-                        preview[2] = btn;
+                    case "adult":
+                        seat_count[3] -= seat_count[0];
+                        seat_count[0] = 0;
+                        btn.BackColor = color;                   
                         break;
                     case "teen":
-                        if (preview[1] != null) preview[1].BackColor = color;
-                        btn.BackColor = Color.White;
-                        preview[1] = btn;
+                        seat_count[3] -= seat_count[1];
+                        seat_count[1] = 0;
+                        btn.BackColor = color;    
                         break;
-                    case "adult":
-                        if (preview[0] != null) preview[0].BackColor = color;
-                        btn.BackColor = Color.White;
-                        preview[0] = btn;
+                    case "kid":
+                        seat_count[3] -= seat_count[2];
+                        seat_count[2] = 0;
+                        btn.BackColor = color;    
                         break;
                 }
             }
 
-            else
+            if (seat_count[3] < temp_seatarr.Count) //적게 선택하는 경우에 대한 예외처리
             {
-                MessageBox.Show("최대 8자리까지 선택 가능합니다.");
+                MessageBox.Show("선택된 좌석수보다 작게할 수 없습니다.");
+                btn.BackColor = color;
+                seat_count[3] -= int.Parse(btn.Text);
+                preview[now_click].BackColor = Color.White;
+                seat_count[3] += int.Parse(preview[now_click].Text);
             }
-            check_null();
-        }
-        private void result_price(int check)//종류별로 가격 출력
-        {
-            price.Text = "";
-            switch (check)
+            preview[now_click] = btn;
+            for (int i = 0; i < 3; i++ )
             {
-
-                case 0:
-                    if ((select_count[0] - now_seat_count[0]) != 0)
-                        print_pay[0] = "성인 X" + ((select_count[0] - now_seat_count[0]) * 8000).ToString();
-                    else
-                        print_pay[0] = null;
+                temp_seat_count[i] = seat_count[i];
+            }
+            label12.Text = seat_count[3].ToString();
+            label14.Text = now_click.ToString();
+        }
+        
+        private void isZero()
+        {
+            label16.Text = "";
+            for(int i=0; i<3; i++)
+            {
+                label16.Text +=temp_seat_count[i].ToString();   
+                if(temp_seat_count[i] > 0)
+                {
+                    check_zero = i;
+                    //break;
+                }
+            }
+            
+          
+            
+        }
+        private void print_recipt()
+        {
+            print_pay[3] = "";
+            print_seat = "";
+            switch(check_zero)
+            {
+                case 0 :
+                    print_pay[0] = "성인 X" + ((seat_count[0] - temp_seat_count[0]) * 10000).ToString();
+                    print_seatcount[0] = "성인 X" + (seat_count[0] - temp_seat_count[0]).ToString();
                     break;
+
                 case 1:
-                    if ((select_count[1] - now_seat_count[1]) != 0)
-                        print_pay[1] = "청소년 X" + ((select_count[1] - now_seat_count[1]) * 7000).ToString();
-                    else
-                        print_pay[1] = null;
+                    print_pay[1] = "청소년 X" + ((seat_count[1] - temp_seat_count[1]) * 8000).ToString();
+                    print_seatcount[1] = "청소년 X" + (seat_count[1] - temp_seat_count[1]).ToString();
                     break;
 
                 case 2:
-                    if ((select_count[2] - now_seat_count[2]) != 0)
-                        print_pay[2] = "어린이 X" + ((select_count[2] - now_seat_count[2]) * 6000).ToString();
-                    else
-                        print_pay[2] = null;
+                    print_pay[2] = "어린이 X" + ((seat_count[2] - temp_seat_count[2]) * 6000).ToString();
+                    print_seatcount[2] = "어린이 X" + (seat_count[2] - temp_seat_count[2]).ToString();
                     break;
+            }
 
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                if (print_pay[i] != null)
-                    price.Text += print_pay[i] + "\n";
-            }
-        }
-
-        private void check_null()
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                if (now_seat_count[i] != 0)
-                {
-                    check = i;
-                    break;
-                }
-            }
+           for(int i=0; i<3 ; i++)
+           {
+               if (print_pay[i] != null)
+                   print_pay[3] += print_pay[i] + "\n";
+               if (print_seatcount[i] != null)
+                   print_seat += print_seatcount[i] + " ";
+           }
+           
+           print_people.Text = print_seat;
+           price.Text = print_pay[3];
 
         }
     }
 }
+/* 현재 구현은 다 되었는데  인원 추가 선택후에 문제가 발생한다. 그부분 처리를 좀더 생각해보다*/

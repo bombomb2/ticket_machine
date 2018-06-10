@@ -25,9 +25,9 @@ namespace ticket
         public Form1()
         {
             InitializeComponent();           
-            page21.Visible = true;
+            page21.Visible = false;
             page_movie_select1.Visible = false;
-            page_auditorium1.Visible = false;                        
+            page_auditorium1.Visible = true;                        
             page21.ButtonClicked += button_Click;            
             page_auditorium1.ButtonClicked += button_Click;
             page_movie_select1.ButtonClicked += button_Click;

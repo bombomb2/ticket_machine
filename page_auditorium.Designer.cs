@@ -95,7 +95,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button_purchase = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
-            this.print_price = new System.Windows.Forms.Label();
+            this.print_people = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -133,6 +133,11 @@
             this.adult_0 = new System.Windows.Forms.Button();
             this.teen_0 = new System.Windows.Forms.Button();
             this.kid_0 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -966,14 +971,14 @@
             this.button_cancel.UseVisualStyleBackColor = true;
             this.button_cancel.Click += new System.EventHandler(this.button_click);
             // 
-            // print_price
+            // print_people
             // 
-            this.print_price.AutoSize = true;
-            this.print_price.Location = new System.Drawing.Point(548, 210);
-            this.print_price.Name = "print_price";
-            this.print_price.Size = new System.Drawing.Size(38, 12);
-            this.print_price.TabIndex = 9;
-            this.print_price.Text = "label8";
+            this.print_people.AutoSize = true;
+            this.print_people.Location = new System.Drawing.Point(548, 210);
+            this.print_people.Name = "print_people";
+            this.print_people.Size = new System.Drawing.Size(38, 12);
+            this.print_people.TabIndex = 9;
+            this.print_people.Text = "label8";
             // 
             // label9
             // 
@@ -1416,11 +1421,61 @@
             this.kid_0.UseVisualStyleBackColor = false;
             this.kid_0.Click += new System.EventHandler(this.button_click);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(550, 64);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 12);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "label12";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(550, 94);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 12);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "label12";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(548, 116);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(44, 12);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "label12";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(87, 333);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 12);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "label18";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(244, 366);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(44, 12);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "label19";
+            // 
             // page_auditorium
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.adult_8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -1432,7 +1487,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label_seat);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.print_price);
+            this.Controls.Add(this.print_people);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_purchase);
             this.Controls.Add(this.label7);
@@ -1605,7 +1660,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button_purchase;
         private System.Windows.Forms.Button button_cancel;
-        private System.Windows.Forms.Label print_price;
+        private System.Windows.Forms.Label print_people;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
@@ -1643,6 +1698,11 @@
         private System.Windows.Forms.Button adult_0;
         private System.Windows.Forms.Button teen_0;
         private System.Windows.Forms.Button kid_0;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
 
     }
 }
