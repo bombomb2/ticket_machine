@@ -1584,7 +1584,7 @@
             this.Controls.Add(this.adult_1);
             this.Controls.Add(this.button_a1);
             this.Name = "page_auditorium";
-            this.Size = new System.Drawing.Size(762, 435);
+            this.Size = new System.Drawing.Size(1280, 720);
             this.Click += new System.EventHandler(this.button_click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

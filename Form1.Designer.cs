@@ -29,44 +29,44 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
+            this.page21 = new ticket.page2();
             this.page_auditorium1 = new ticket.page_auditorium();
             this.page_movie_select1 = new ticket.page_movie_select();
-            this.page21 = new ticket.page2();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(735, 0);
+            this.label4.Location = new System.Drawing.Point(1234, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "X";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // page21
+            // 
+            this.page21.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.page21.Location = new System.Drawing.Point(0, 28);
+            this.page21.Name = "page21";
+            this.page21.Size = new System.Drawing.Size(1268, 680);
+            this.page21.TabIndex = 11;
+            // 
             // page_auditorium1
             // 
             this.page_auditorium1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.page_auditorium1.Location = new System.Drawing.Point(0, 27);
             this.page_auditorium1.Name = "page_auditorium1";
-            this.page_auditorium1.Size = new System.Drawing.Size(760, 408);
+            this.page_auditorium1.Size = new System.Drawing.Size(1268, 681);
             this.page_auditorium1.TabIndex = 10;
             // 
             // page_movie_select1
             // 
             this.page_movie_select1.Location = new System.Drawing.Point(0, 28);
             this.page_movie_select1.Name = "page_movie_select1";
-            this.page_movie_select1.Size = new System.Drawing.Size(762, 408);
+            this.page_movie_select1.Size = new System.Drawing.Size(1268, 680);
             this.page_movie_select1.TabIndex = 12;
-            // 
-            // page21
-            // 
-            this.page21.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.page21.Location = new System.Drawing.Point(0, 28);
-            this.page21.Name = "page21";
-            this.page21.Size = new System.Drawing.Size(762, 419);
-            this.page21.TabIndex = 11;
             // 
             // Form1
             // 
@@ -74,11 +74,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(760, 437);
-            this.Controls.Add(this.page_auditorium1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.page_movie_select1);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.page21);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.page_auditorium1);
+            this.Controls.Add(this.page_movie_select1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

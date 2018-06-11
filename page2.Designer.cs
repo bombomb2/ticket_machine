@@ -36,7 +36,7 @@
             // 
             this.button_reservation.AutoSize = true;
             this.button_reservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_reservation.Location = new System.Drawing.Point(442, 157);
+            this.button_reservation.Location = new System.Drawing.Point(811, 253);
             this.button_reservation.Name = "button_reservation";
             this.button_reservation.Size = new System.Drawing.Size(150, 107);
             this.button_reservation.TabIndex = 1;
@@ -48,7 +48,7 @@
             // 
             this.button_purchase.AutoSize = true;
             this.button_purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_purchase.Location = new System.Drawing.Point(145, 157);
+            this.button_purchase.Location = new System.Drawing.Point(346, 253);
             this.button_purchase.Name = "button_purchase";
             this.button_purchase.Size = new System.Drawing.Size(150, 107);
             this.button_purchase.TabIndex = 1;
@@ -60,11 +60,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.button_purchase);
             this.Controls.Add(this.button_reservation);
             this.Name = "page2";
-            this.Size = new System.Drawing.Size(762, 435);
+            this.Size = new System.Drawing.Size(1280, 720);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -58,8 +58,13 @@ namespace ticket //남은 좌석수 표시하기
             while (rdr.Read())
             {
                 DateTime myDate = DateTime.Parse(rdr["date"].ToString());
-                string rdr_date = myDate.ToString("MM월 dd일");
-                listBox_date.Items.Add(rdr_date);
+                string rdr_date = myDate.ToString("yyMMdd");
+
+                String now = DateTime.Now.ToString("yyMMdd"); //만약 현재날짜보다 db의 날짜가 이전이면 표시하지 않음
+                if (int.Parse(rdr_date) >= int.Parse(now)) {
+                    rdr_date = myDate.ToString("MM월 dd일");
+                    listBox_date.Items.Add(rdr_date);
+                }
             }
             movie_picture.ImageLocation = movie_path + "default.jpg";
             movie_picture.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -101,9 +106,9 @@ namespace ticket //남은 좌석수 표시하기
             if (isSelected_date && isSelected_movie)
             {
                          listBox_time.Items.Clear();
-                         string sql = "SELECT movie_id, auditorium_num, time from timetable " +
-                               "where title_num =(SELECT title_num from movie where title = '"
-                               + listBox_movie_select.SelectedItem.ToString() + "') and date = '" + date + "';";
+                        string sql = "SELECT movie_id, auditorium_num, time, count from timetable " +
+                     "where title_num =(SELECT title_num from movie where title = '"
+                     + listBox_movie_select.SelectedItem.ToString() + "') and date = '" + date + "';";
 
                          SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                          SQLiteDataReader rdr = cmd.ExecuteReader();
@@ -111,8 +116,10 @@ namespace ticket //남은 좌석수 표시하기
                          while (rdr.Read())
                          {
                              int auditorium_num = int.Parse(rdr["auditorium_num"].ToString());
+                             int auditorium_count = int.Parse(rdr["count"].ToString());
+
                              String time = rdr["time"].ToString();
-                             listBox_time.Items.Add(auditorium_num + "상영관    " + time);
+                             listBox_time.Items.Add(auditorium_count + "석   " +auditorium_num + "상영관  " + time);
                          }
                      }
             
