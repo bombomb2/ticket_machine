@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.button_Click = new System.Windows.Forms.Button();
-            this.pass_2 = new System.Windows.Forms.TextBox();
             this.pass = new System.Windows.Forms.TextBox();
             this.phone = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,16 +50,6 @@
             this.button_Click.Text = "다음 단계";
             this.button_Click.UseVisualStyleBackColor = true;
             this.button_Click.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pass_2
-            // 
-            this.pass_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pass_2.Location = new System.Drawing.Point(317, 342);
-            this.pass_2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pass_2.Name = "pass_2";
-            this.pass_2.PasswordChar = '*';
-            this.pass_2.Size = new System.Drawing.Size(280, 27);
-            this.pass_2.TabIndex = 20;
             // 
             // pass
             // 
@@ -91,16 +79,6 @@
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(280, 27);
             this.name.TabIndex = 17;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(141, 347);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 24);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "비밀번호 재입력";
             // 
             // label4
             // 
@@ -159,11 +137,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button_Click);
-            this.Controls.Add(this.pass_2);
             this.Controls.Add(this.pass);
             this.Controls.Add(this.phone);
             this.Controls.Add(this.name);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -178,11 +154,9 @@
         #endregion
 
         private System.Windows.Forms.Button button_Click;
-        private System.Windows.Forms.TextBox pass_2;
         private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.TextBox phone;
         private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

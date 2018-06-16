@@ -111,8 +111,7 @@ namespace ticket
                 case "movieselect_next":
                     login.ShowDialog();                   
                     if (login_check == 1)
-                    {    
-                                     
+                    {
                         page_movie_select1.Visible = false;                        
                         page_auditorium1.load_data();
                         page_auditorium1.Visible = true;

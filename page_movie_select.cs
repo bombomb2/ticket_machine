@@ -40,6 +40,7 @@ namespace ticket //남은 좌석수 표시하기
         {
             listBox_movie_select.Items.Clear();
             listBox_date.Items.Clear();
+            listBox_time.Items.Clear();
             conn = new SQLiteConnection("Data source=" + Form1.path2 + ";Version=3");
             conn.Open();
             string sql = "SELECT DISTINCT title from movie, timetable where movie.title_num = timetable.title_num;";
@@ -101,8 +102,6 @@ namespace ticket //남은 좌석수 표시하기
             }
         }
 
-
-
         private void loadTime()
         {
             if (isSelected_date && isSelected_movie)
@@ -135,7 +134,6 @@ namespace ticket //남은 좌석수 표시하기
             if (temp_arr[temp_arr.Length - 1].Equals("취소"))
             {
                 buttonClicked.Invoke("movieselect_cancel", e);
-                conn.Close();
             }
             else if (temp_arr[temp_arr.Length - 1].Equals("좌석선택"))
             {
@@ -155,7 +153,6 @@ namespace ticket //남은 좌석수 표시하기
                         // MessageBox.Show("movie_id: " + movie_id);
                     }
                     rdr.Close();
-                    conn.Close();
                     buttonClicked.Invoke("movieselect_next", e);
 
                     if (Form1.login_check == 1)

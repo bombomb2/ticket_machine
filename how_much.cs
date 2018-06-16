@@ -67,9 +67,20 @@ namespace ticket
             textBox2.Text = date;
             textBox3.Text = auditorium_num;
             textBox4.Text = page_auditorium.now_seat;
-            textBox5.Text = (page_auditorium.now_count * 0.01).ToString();
-            point = int.Parse((page_auditorium.now_count * 0.01).ToString());
-            label10.Text = (page_auditorium.now_count).ToString();
+            if (!Form1.is_nonmember)
+            {
+                label6.Visible = true;
+                textBox5.Visible = true;
+                textBox5.Text = (page_auditorium.now_count * 0.01).ToString();
+                point = int.Parse((page_auditorium.now_count * 0.01).ToString());
+            }
+            else
+            {
+                label6.Visible = false;
+                textBox5.Visible = false;
+            }
+
+                label10.Text = (page_auditorium.now_count).ToString();
             
         }
     }

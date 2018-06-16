@@ -42,20 +42,15 @@ namespace ticket
 
             string text1 = name.Text;
             string text2 = phone.Text;
-            string text4 = pass_2.Text;
             string text3 = pass.Text;
 
-            if ((text1 == "" || text2 == "") || (text3 == "" || text4 == "")) //입력 칸에 공백이 하나라도 있다면
+            if ((text1 == "" || text2 == "") || (text3 == "")) //입력 칸에 공백이 하나라도 있다면
                 MessageBox.Show("입력하신 정보를 다시 확인해주세요.");
-            else if (text4 != text3)
-            {
-                MessageBox.Show("비밀번호가 같지 않습니다.");
-            }
+            
             else
             {
                 string PASS = pass.Text;
                 string NAME = name.Text;
-                string PASS_2 = pass_2.Text;
                 string PHONE = phone.Text;
                 String sql = "SELECT id from non_member where name = '" + NAME + "' and phone = '" + PHONE + "' and password = '" + PASS + "';";
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);

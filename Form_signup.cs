@@ -49,12 +49,10 @@ namespace ticket
 
             switch (temp_arr[temp_arr.Length - 1])
             {
-                case "중복확인":
-                    label2.Text = "중복확인"; //제대로 중복확인되었나 확인용 지워야함
-                    
+                case "중복확인":                    
                     int count = 0;                     
                     
-                    if (ID_Box.Text != null)
+                    if (!ID_Box.Text.Equals(""))
                     {
                         search_id = ID_Box.Text;                      
                         SQLiteConnection conn = new SQLiteConnection("Data Source=" + path2 + ";Version=3;");
@@ -77,8 +75,6 @@ namespace ticket
                         }                       
                         read.Close();
                         conn.Close();
-                        
-                                             
                     }
                     else
                         MessageBox.Show("아이디를 입력하지 않으셨습니다.");

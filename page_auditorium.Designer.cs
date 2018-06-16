@@ -90,7 +90,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button_purchase = new System.Windows.Forms.Button();
-            this.button_cancel = new System.Windows.Forms.Button();
+            this.buttoncancel = new System.Windows.Forms.Button();
             this.print_people = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -976,17 +976,17 @@
             this.button_purchase.UseVisualStyleBackColor = false;
             this.button_purchase.Click += new System.EventHandler(this.button_click);
             // 
-            // button_cancel
+            // buttoncancel
             // 
-            this.button_cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
-            this.button_cancel.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button_cancel.Location = new System.Drawing.Point(945, 557);
-            this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(100, 80);
-            this.button_cancel.TabIndex = 8;
-            this.button_cancel.Text = "취소";
-            this.button_cancel.UseVisualStyleBackColor = false;
-            this.button_cancel.Click += new System.EventHandler(this.button_click);
+            this.buttoncancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.buttoncancel.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold);
+            this.buttoncancel.Location = new System.Drawing.Point(945, 557);
+            this.buttoncancel.Name = "buttoncancel";
+            this.buttoncancel.Size = new System.Drawing.Size(100, 80);
+            this.buttoncancel.TabIndex = 8;
+            this.buttoncancel.Text = "취소";
+            this.buttoncancel.UseVisualStyleBackColor = false;
+            this.buttoncancel.Click += new System.EventHandler(this.button_click);
             // 
             // print_people
             // 
@@ -1420,9 +1420,9 @@
             this.total_price.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.total_price.Location = new System.Drawing.Point(1002, 460);
             this.total_price.Name = "total_price";
-            this.total_price.Size = new System.Drawing.Size(63, 25);
+            this.total_price.Size = new System.Drawing.Size(41, 25);
             this.total_price.TabIndex = 9;
-            this.total_price.Text = "label8";
+            this.total_price.Text = "0원";
             // 
             // label17
             // 
@@ -2254,7 +2254,7 @@
             this.Controls.Add(this.label_seat);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.print_people);
-            this.Controls.Add(this.button_cancel);
+            this.Controls.Add(this.buttoncancel);
             this.Controls.Add(this.button_purchase);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label7);
@@ -2475,7 +2475,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button_purchase;
-        private System.Windows.Forms.Button button_cancel;
+        private System.Windows.Forms.Button buttoncancel;
         private System.Windows.Forms.Label print_people;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

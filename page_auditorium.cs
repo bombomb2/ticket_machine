@@ -46,6 +46,10 @@ namespace ticket
             {
                 if (x is Button && x.Name.Contains("adult") || x.Name.Contains("kid") || x.Name.Contains("teen"))
                     x.BackColor = color;
+                if(x is Button && x.Name.Contains("_a")|| x.Name.Contains("_b") || x.Name.Contains("_c") || x.Name.Contains("_d") || x.Name.Contains("_e") 
+                    || x.Name.Contains("_f") || x.Name.Contains("_g") || x.Name.Contains("_h") || x.Name.Contains("_i") || x.Name.Contains("_j") )
+                    x.BackColor = color;
+
             }
             temp_seatarr.Clear();            
             seat_arr.Clear();
@@ -55,6 +59,7 @@ namespace ticket
             print_people.Text = "";
             label_seat.Text = "";
              price.Text = "";
+            total_price.Text = "0원";
              count = 0;
            for(int i=0; i< 4; i++)
            {
@@ -285,8 +290,9 @@ namespace ticket
                 preview[now_click].BackColor = Color.BlueViolet;
                 seat_count[3] += int.Parse(preview[now_click].Text);
             }
-            preview[now_click] = btn;         
-          
+            preview[now_click] = btn;
+            total_price.Text = (seat_count[0] * 10000 + seat_count[1] * 8000 + seat_count[2] * 6000).ToString()+"원";
+
         }
         
       
