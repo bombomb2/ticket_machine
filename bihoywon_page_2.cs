@@ -55,12 +55,6 @@ namespace ticket
                 MessageBox.Show("입력하신 정보를 다시 확인해주세요.");
             else if (text4 != text3) { 
                 MessageBox.Show("비밀번호가 같지 않습니다.");
-
-                name.Text = "";
-                phone.Text = "";
-                pass_2.Text = "";
-                pass.Text = "";
-
             }
             else
             {

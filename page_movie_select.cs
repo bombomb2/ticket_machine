@@ -67,7 +67,7 @@ namespace ticket //남은 좌석수 표시하기
                     listBox_date.Items.Add(rdr_date);
                 }
             }
-            movie_picture.ImageLocation = movie_path + "default.jpg";
+            movie_picture.ImageLocation = movie_path + "default.png";
             movie_picture.SizeMode = PictureBoxSizeMode.StretchImage;
 
         }

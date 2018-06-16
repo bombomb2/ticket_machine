@@ -84,6 +84,7 @@
             this.listBox_movie_select.Location = new System.Drawing.Point(0, 35);
             this.listBox_movie_select.Name = "listBox_movie_select";
             this.listBox_movie_select.Size = new System.Drawing.Size(252, 626);
+            this.listBox_movie_select.Sorted = true;
             this.listBox_movie_select.TabIndex = 1;
             this.listBox_movie_select.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox1_DrawItem);
             this.listBox_movie_select.SelectedIndexChanged += new System.EventHandler(this.listBox_movie_select_SelectedIndexChanged);

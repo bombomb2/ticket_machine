@@ -52,3 +52,15 @@ C:\Users\yang\Desktop\과제_임시저장\컴시설\ticket_machine\obj\Debug\tic
 C:\Users\yang\Desktop\과제_임시저장\컴시설\ticket_machine\obj\Debug\ticket.exe
 C:\Users\yang\Desktop\과제_임시저장\컴시설\ticket_machine\obj\Debug\ticket.pdb
 C:\Users\yang\Desktop\과제_임시저장\컴시설\ticket_machine\obj\Debug\ticket.csprojResolveAssemblyReference.cache
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.csprojResolveAssemblyReference.cache
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.bihoywon_page_1.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.bihoywon_page_2.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\WindowsFormsApplication1.confirm.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.find_id.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.how_much.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\WindowsFormsApplication1.pagemoney.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.page_checkBook.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.page_nonmember_login.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.recheck.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.search_pass.resources
+D:\Android\mobileProgramming\ticket_machine\obj\Debug\ticket.selction.resources
