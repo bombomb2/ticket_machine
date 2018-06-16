@@ -49,6 +49,7 @@ namespace ticket
             bihoywon_page_11.ButtonClicked += button_Click;
             bihoywon_page_21.ButtonClicked += button_Click;
             page_nonmember_login1.ButtonClicked += button_Click;
+            page_checkBook1.ButtonClicked += button_Click;
             login = new Form_login();
            // login.ShowDialog();
             //Form_signup sign = new Form_signup();
@@ -188,6 +189,11 @@ namespace ticket
                         page_checkBook1.Visible = true;
                         page_checkBook1.load_name();
                         page_checkBook1.load_data();
+                        break;
+                    }
+                case "confirm_check":
+                    {
+                        page_checkBook1.Visible = false;
                         break;
                     }
             }           

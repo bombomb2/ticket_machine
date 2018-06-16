@@ -34,6 +34,9 @@
             this.column_seat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column_time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column_price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.column_title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.column_audotoruim = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button_purchase = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_name
@@ -51,16 +54,18 @@
             this.listView_check.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView_check.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.column_num,
-            this.column_seat,
+            this.column_title,
+            this.column_audotoruim,
             this.column_time,
+            this.column_seat,
             this.column_price});
-            this.listView_check.Font = new System.Drawing.Font("굴림", 12F);
+            this.listView_check.Font = new System.Drawing.Font("굴림", 14F);
             this.listView_check.GridLines = true;
             this.listView_check.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView_check.Location = new System.Drawing.Point(194, 216);
+            this.listView_check.Location = new System.Drawing.Point(93, 216);
             this.listView_check.MultiSelect = false;
             this.listView_check.Name = "listView_check";
-            this.listView_check.Size = new System.Drawing.Size(661, 165);
+            this.listView_check.Size = new System.Drawing.Size(1142, 351);
             this.listView_check.TabIndex = 1;
             this.listView_check.TileSize = new System.Drawing.Size(228, 100);
             this.listView_check.UseCompatibleStateImageBehavior = false;
@@ -69,30 +74,58 @@
             // column_num
             // 
             this.column_num.Text = "예약번호";
-            this.column_num.Width = 147;
+            this.column_num.Width = 89;
             // 
             // column_seat
             // 
+            this.column_seat.DisplayIndex = 4;
             this.column_seat.Text = "좌석";
             this.column_seat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.column_seat.Width = 168;
+            this.column_seat.Width = 345;
             // 
             // column_time
             // 
             this.column_time.Text = "상영시간";
             this.column_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.column_time.Width = 169;
+            this.column_time.Width = 158;
             // 
             // column_price
             // 
+            this.column_price.DisplayIndex = 5;
             this.column_price.Text = "요금";
             this.column_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.column_price.Width = 174;
+            this.column_price.Width = 165;
+            // 
+            // column_title
+            // 
+            this.column_title.Text = "제목";
+            this.column_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_title.Width = 229;
+            // 
+            // column_audotoruim
+            // 
+            this.column_audotoruim.DisplayIndex = 2;
+            this.column_audotoruim.Text = "상영관";
+            this.column_audotoruim.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.column_audotoruim.Width = 109;
+            // 
+            // button_purchase
+            // 
+            this.button_purchase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.button_purchase.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_purchase.Location = new System.Drawing.Point(532, 587);
+            this.button_purchase.Name = "button_purchase";
+            this.button_purchase.Size = new System.Drawing.Size(142, 45);
+            this.button_purchase.TabIndex = 9;
+            this.button_purchase.Text = "확인";
+            this.button_purchase.UseVisualStyleBackColor = false;
+            this.button_purchase.Click += new System.EventHandler(this.button1_Click);
             // 
             // page_checkBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button_purchase);
             this.Controls.Add(this.listView_check);
             this.Controls.Add(this.label_name);
             this.Name = "page_checkBook";
@@ -110,5 +143,8 @@
         private System.Windows.Forms.ColumnHeader column_seat;
         private System.Windows.Forms.ColumnHeader column_time;
         private System.Windows.Forms.ColumnHeader column_price;
+        private System.Windows.Forms.ColumnHeader column_title;
+        private System.Windows.Forms.ColumnHeader column_audotoruim;
+        private System.Windows.Forms.Button button_purchase;
     }
 }

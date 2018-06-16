@@ -41,17 +41,27 @@ namespace ticket
                 while (rdr.Read())
                 {
                     ListViewItem item = new ListViewItem((rdr["reserve_num"]).ToString());
-                    item.SubItems.Add((rdr["seat"]).ToString());
-
+                    
                     string movie_id = rdr["movie_id"].ToString();
-                    sql = "SELECT DISTINCT time from timetable where movie_id = " + movie_id + ";";
+
+                    sql = "SELECT DISTINCT title from movie where title_num = (SELECT title_num from timetable where movie_id = '" + movie_id + "');";
                     SQLiteCommand cmd3 = new SQLiteCommand(sql, conn);
                     SQLiteDataReader rdr2 = cmd3.ExecuteReader();
                     while (rdr2.Read())
                     {
+                        item.SubItems.Add((rdr2["title"]).ToString());
+                    }
+                    rdr2.Close();
+
+                    sql = "SELECT DISTINCT auditorium_num, time from timetable where movie_id = " + movie_id + ";";
+                    cmd3 = new SQLiteCommand(sql, conn);
+                    rdr2 = cmd3.ExecuteReader();
+                    while (rdr2.Read())
+                    {
+                        item.SubItems.Add((rdr2["auditorium_num"]).ToString()+"관");
                         item.SubItems.Add((rdr2["time"]).ToString());
                     }
-
+                    item.SubItems.Add((rdr["seat"]).ToString());
                     item.SubItems.Add((rdr["price"]).ToString() + "원");
                     listView_check.Items.Add(item);
                 }
@@ -62,6 +72,22 @@ namespace ticket
             }
             conn.Close();
         }
+
+        public delegate void OnButtonClickedEventHandler(object sender, EventArgs e);
+
+        private OnButtonClickedEventHandler buttonClicked;
+        public event OnButtonClickedEventHandler ButtonClicked
+        {
+            add { buttonClicked += value; }
+            remove { buttonClicked -= value; }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1.is_nonmember = false;
+            buttonClicked.Invoke("confirm_check", e);
+        }
+
 
 
         public void load_name()
