@@ -41,6 +41,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.find_id1 = new ticket.find_id();
+            this.search_pass1 = new ticket.search_pass();
             this.SuspendLayout();
             // 
             // text_id
@@ -86,7 +88,7 @@
             this.button_nobuy.Name = "button_nobuy";
             this.button_nobuy.Size = new System.Drawing.Size(140, 31);
             this.button_nobuy.TabIndex = 6;
-            this.button_nobuy.Text = "비회원 예매 확인";
+            this.button_nobuy.Text = "비회원로그인";
             this.button_nobuy.UseVisualStyleBackColor = true;
             this.button_nobuy.Click += new System.EventHandler(this.button_Click);
             // 
@@ -124,7 +126,7 @@
             this.button_findpw.Name = "button_findpw";
             this.button_findpw.Size = new System.Drawing.Size(104, 31);
             this.button_findpw.TabIndex = 11;
-            this.button_findpw.Text = "비밀번호 찾기";
+            this.button_findpw.Text = "비밀번호찾기";
             this.button_findpw.UseVisualStyleBackColor = true;
             this.button_findpw.Click += new System.EventHandler(this.button_Click);
             // 
@@ -135,7 +137,7 @@
             this.button_findid.Name = "button_findid";
             this.button_findid.Size = new System.Drawing.Size(104, 31);
             this.button_findid.TabIndex = 12;
-            this.button_findid.Text = "아이디 찾기";
+            this.button_findid.Text = "아이디찾기";
             this.button_findid.UseVisualStyleBackColor = true;
             this.button_findid.Click += new System.EventHandler(this.button_Click);
             // 
@@ -179,12 +181,30 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button_Click);
             // 
+            // find_id1
+            // 
+            this.find_id1.Location = new System.Drawing.Point(2, 16);
+            this.find_id1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.find_id1.Name = "find_id1";
+            this.find_id1.Size = new System.Drawing.Size(560, 370);
+            this.find_id1.TabIndex = 41;
+            // 
+            // search_pass1
+            // 
+            this.search_pass1.Location = new System.Drawing.Point(2, 24);
+            this.search_pass1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_pass1.Name = "search_pass1";
+            this.search_pass1.Size = new System.Drawing.Size(560, 370);
+            this.search_pass1.TabIndex = 42;
+            // 
             // Form_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(564, 391);
+            this.Controls.Add(this.find_id1);
+            this.Controls.Add(this.search_pass1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label7);
@@ -222,6 +242,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private find_id find_id1;
+        private search_pass search_pass1;
     }
 }
 

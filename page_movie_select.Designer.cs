@@ -101,11 +101,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(-1, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 31);
+            this.label1.Size = new System.Drawing.Size(56, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "영화";
             // 
@@ -157,11 +157,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(-1, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 31);
+            this.label2.Size = new System.Drawing.Size(56, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "날짜";
             // 
@@ -204,11 +204,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(-1, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 31);
+            this.label5.Size = new System.Drawing.Size(56, 31);
             this.label5.TabIndex = 0;
             this.label5.Text = "시간";
             // 
@@ -223,13 +223,13 @@
             // 
             // movie_select_prev
             // 
-            this.movie_select_prev.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.movie_select_prev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.movie_select_prev.ForeColor = System.Drawing.Color.White;
             this.movie_select_prev.Location = new System.Drawing.Point(-1, 1);
             this.movie_select_prev.Name = "movie_select_prev";
             this.movie_select_prev.Size = new System.Drawing.Size(82, 31);
             this.movie_select_prev.TabIndex = 0;
-            this.movie_select_prev.Text = "이전";
+            this.movie_select_prev.Text = "취소";
             this.movie_select_prev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.movie_select_prev.Click += new System.EventHandler(this.button_Click);
             // 
@@ -244,7 +244,7 @@
             // 
             // movie_select_next
             // 
-            this.movie_select_next.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.movie_select_next.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.movie_select_next.ForeColor = System.Drawing.Color.White;
             this.movie_select_next.Location = new System.Drawing.Point(-1, 1);
             this.movie_select_next.Name = "movie_select_next";

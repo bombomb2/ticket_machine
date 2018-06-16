@@ -18,9 +18,9 @@ namespace ticket //남은 좌석수 표시하기
         private bool isSelected_movie = false;
         private bool isSelected_date = false;
         public static bool isSelected_time = false;
-        public int movie_id;
+        public static int movie_id;
         private string date = "";
-        string movie_path = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "/photo/";    
+        string movie_path = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "/photo/";
 
         public delegate void OnButtonClickedEventHandler(object sender, EventArgs e);
         private OnButtonClickedEventHandler buttonClicked;
@@ -35,7 +35,7 @@ namespace ticket //남은 좌석수 표시하기
             InitializeComponent();
 
         }
-        
+
         public void InitListbox()
         {
             listBox_movie_select.Items.Clear();
@@ -61,14 +61,15 @@ namespace ticket //남은 좌석수 표시하기
                 string rdr_date = myDate.ToString("yyMMdd");
 
                 String now = DateTime.Now.ToString("yyMMdd"); //만약 현재날짜보다 db의 날짜가 이전이면 표시하지 않음
-                if (int.Parse(rdr_date) >= int.Parse(now)) {
+                if (int.Parse(rdr_date) >= int.Parse(now))
+                {
                     rdr_date = myDate.ToString("MM월 dd일");
                     listBox_date.Items.Add(rdr_date);
                 }
             }
             movie_picture.ImageLocation = movie_path + "default.jpg";
             movie_picture.SizeMode = PictureBoxSizeMode.StretchImage;
-            
+
         }
         private void listBox_movie_select_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -86,17 +87,18 @@ namespace ticket //남은 좌석수 표시하기
             {
                 movie_content.Text = (rdr["content"].ToString());
                 movie_picture.ImageLocation = movie_path + rdr["title_num"] + ".jpg";
-            }           
+            }
         }
 
         private void listBox_date_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox_date.SelectedItem != null) { 
-            isSelected_date = true;
-            DateTime myDate = DateTime.Parse(listBox_date.SelectedItem.ToString());
-            date = "18." + myDate.ToString("MM.dd");
-            loadTime();
-        }
+            if (listBox_date.SelectedItem != null)
+            {
+                isSelected_date = true;
+                DateTime myDate = DateTime.Parse(listBox_date.SelectedItem.ToString());
+                date = "18." + myDate.ToString("MM.dd");
+                loadTime();
+            }
         }
 
 
@@ -105,31 +107,32 @@ namespace ticket //남은 좌석수 표시하기
         {
             if (isSelected_date && isSelected_movie)
             {
-                         listBox_time.Items.Clear();
-                        string sql = "SELECT movie_id, auditorium_num, time, count from timetable " +
-                     "where title_num =(SELECT title_num from movie where title = '"
-                     + listBox_movie_select.SelectedItem.ToString() + "') and date = '" + date + "';";
+                listBox_time.Items.Clear();
+                string sql = "SELECT movie_id, auditorium_num, time, count from timetable " +
+             "where title_num =(SELECT title_num from movie where title = '"
+             + listBox_movie_select.SelectedItem.ToString() + "') and date = '" + date + "';";
 
-                         SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                         SQLiteDataReader rdr = cmd.ExecuteReader();
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                SQLiteDataReader rdr = cmd.ExecuteReader();
 
-                         while (rdr.Read())
-                         {
-                             int auditorium_num = int.Parse(rdr["auditorium_num"].ToString());
-                             int auditorium_count = int.Parse(rdr["count"].ToString());
+                while (rdr.Read())
+                {
+                    int auditorium_num = int.Parse(rdr["auditorium_num"].ToString());
+                    int auditorium_count = int.Parse(rdr["count"].ToString());
 
-                             String time = rdr["time"].ToString();
-                             listBox_time.Items.Add(auditorium_count + "석   " +auditorium_num + "상영관  " + time);
-                         }
-                     }
-            
+                    String time = rdr["time"].ToString();
+                    listBox_time.Items.Add(auditorium_count + "석   " + auditorium_num + "상영관  " + time);
+                }
+                rdr.Close();
+            }
+
         }
 
         private void button_Click(object sender, EventArgs e)
         {
-    
+
             string[] temp_arr = sender.ToString().Split(' ');
-            if (temp_arr[temp_arr.Length - 1].Equals("이전"))
+            if (temp_arr[temp_arr.Length - 1].Equals("취소"))
             {
                 buttonClicked.Invoke("movieselect_cancel", e);
                 conn.Close();
@@ -138,9 +141,10 @@ namespace ticket //남은 좌석수 표시하기
             {
                 if (isSelected_time)
                 {
+                    string[] temp = listBox_time.SelectedItem.ToString().Split();
                     string sql = "SELECT movie_id from timetable " +
                                   "where title_num =(SELECT title_num from movie where title = '"
-                                  + listBox_movie_select.SelectedItem.ToString() + "') and date = '" + date + "' and time = '" + listBox_time.SelectedItem.ToString().Substring(8, 5) + "';";
+                                  + listBox_movie_select.SelectedItem.ToString() + "') and date = '" + date + "' and time = '" + temp[5] + "';";
 
                     SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                     SQLiteDataReader rdr = cmd.ExecuteReader();
@@ -148,53 +152,47 @@ namespace ticket //남은 좌석수 표시하기
                     while (rdr.Read())
                     {
                         movie_id = int.Parse(rdr["movie_id"].ToString());
-                       // MessageBox.Show("movie_id: " + movie_id);
+                        // MessageBox.Show("movie_id: " + movie_id);
                     }
+                    rdr.Close();
+                    conn.Close();
                     buttonClicked.Invoke("movieselect_next", e);
 
-                 //   conn.Close();
-                    if(Form1.login_check==1)
+                    if (Form1.login_check == 1)
                         conn.Close();
-
-
-                 //   conn.Close();
-
-                    if(Form1.login_check==1)
-                        conn.Close();
-
 
                 }
                 else
                 {
                     MessageBox.Show("영화 시간을 선택해주세요.");
                 }
-            }       
+            }
         }
 
 
         private void listBox1_DrawItem(object sender, DrawItemEventArgs e) //목록이 그려질 때 발생하는 DrawItem 이벤트 수정
         {
-                e.DrawBackground();
-                Graphics g = e.Graphics;
-                Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Red : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
-                g.FillRectangle(brush, e.Bounds);
-            if(e.Index>-1)
+            e.DrawBackground();
+            Graphics g = e.Graphics;
+            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Red : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
+            g.FillRectangle(brush, e.Bounds);
+            if (e.Index > -1)
                 e.Graphics.DrawString(listBox_movie_select.Items[e.Index].ToString(), e.Font,
                     ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Black : new SolidBrush(e.ForeColor), e.Bounds, StringFormat.GenericDefault); //ForeColor 수정하는 곳 
-                e.DrawFocusRectangle();
-            
+            e.DrawFocusRectangle();
+
         }
 
         private void listBox_date_DrawItem(object sender, DrawItemEventArgs e)
         {
-           
-                string sOoutput = listBox_date.Items[e.Index].ToString();
-                float folength = e.Graphics.MeasureString(sOoutput, e.Font).Width;
-                float fpos = (listBox_date.Width - folength) / 2;
-                Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Red : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
-                e.Graphics.FillRectangle(brush, e.Bounds.Left, e.Bounds.Top, e.Bounds.Width, e.Bounds.Height);
-                e.Graphics.DrawString(sOoutput, e.Font,
-                    ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Black : new SolidBrush(e.ForeColor), fpos, e.Bounds.Top);
+
+            string sOoutput = listBox_date.Items[e.Index].ToString();
+            float folength = e.Graphics.MeasureString(sOoutput, e.Font).Width;
+            float fpos = (listBox_date.Width - folength) / 2;
+            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Red : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
+            e.Graphics.FillRectangle(brush, e.Bounds.Left, e.Bounds.Top, e.Bounds.Width, e.Bounds.Height);
+            e.Graphics.DrawString(sOoutput, e.Font,
+                ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Black : new SolidBrush(e.ForeColor), fpos, e.Bounds.Top);
         }
         private void listBox_time_DrawItem(object sender, DrawItemEventArgs e)
         {
