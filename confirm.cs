@@ -45,17 +45,34 @@ namespace WindowsFormsApplication1
        private void Button_clicked(object sender, EventArgs e)        
        {
            Button btn;
-           btn = sender as Button;
-           MessageBox.Show(btn.Text);
+           btn = sender as Button;          
            if(btn.Text.Equals("취소"))
-           {
-               MessageBox.Show("취소");
+           {               
                buttonClicked.Invoke("카드취소",e);               
            }
            else if(btn.Text.Equals("확인"))
-           {
-               if (comboBox1.Text != null && textBox1.Text != null && textBox2.Text != null && textBox3.Text != null && textBox4.Text != null && textBox5.Text != null && textBox6.Text != null && textBox7.Text != null && radioButton1.Text != null || radioButton2.Text != null)
-                        buttonClicked.Invoke("카드확인", e);
+           {             
+              
+               if (!comboBox1.Text.Equals("") )
+               {
+                   if (!textBox1.Text.Equals("") || !textBox2.Text.Equals("") || !textBox3.Text.Equals("") || !textBox4.Text.Equals(""))
+                   {
+                       if (!textBox5.Text.Equals("") || !textBox6.Text.Equals(""))
+                       {
+                           if (!textBox7.Text.Equals(""))
+                           {
+                               buttonClicked.Invoke("카드확인", e);
+                           }
+                           else { MessageBox.Show("비밀번호를 입력해주세요"); }
+                       }
+                       else { MessageBox.Show("카드 년 월을 입력해주세요"); }
+                   }
+                   else { MessageBox.Show("카드번호를 입력해주세요"); }
+               }
+               else 
+               {                 
+                       MessageBox.Show("카드사를 선택해주세요");
+               }
            }
            
         }

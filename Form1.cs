@@ -26,12 +26,12 @@ namespace ticket
         public Form1()
         {
             InitializeComponent();
-            page21.Visible = false ;
+            page21.Visible = true ;
             page_movie_select1.Visible = false;
             page_auditorium1.Visible = false;
             selction1.Visible = false;
             pagemoney1.Visible = false;
-            confirm1.Visible = true;
+            confirm1.Visible = false;
             how_much1.Visible = false;
             recheck1.Visible = false;
             bihoywon_page_11.Visible = false;
@@ -104,6 +104,7 @@ namespace ticket
                 case "movieselect_cancel":
                     page_movie_select1.Visible = false;
                     page21.Visible = true;
+                    is_nonmember = false;
                     break;
 
                 case "movieselect_next":
@@ -157,14 +158,17 @@ namespace ticket
                 case "확인취소":                    
                     how_much1.Visible = false;
                     page21.Visible = true;
+                    is_nonmember = false;
                     break;
                 case "seatcancel":
                     page_auditorium1.Visible = false;
                     page21.Visible = true;
+                    is_nonmember = false;
                     break;
                 case "카드취소":
                     confirm1.Visible = false;
                     page21.Visible = true;
+                    is_nonmember = false;
                     break;
                 case "next_nonmember": //비회원 예매 안내 다음버튼 //이거 추가
                     bihoywon_page_11.Visible = false;
