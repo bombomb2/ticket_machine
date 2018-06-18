@@ -37,40 +37,51 @@ namespace ticket
 
         private void button1_Click(object sender, EventArgs e)
         {
-            conn = new SQLiteConnection("Data source=" + path2 + ";Version=3;");
-            conn.Open();
-
-            string text1 = name.Text;
-            string text2 = phone.Text;
-            string text3 = pass.Text;
-
-            if ((text1 == "" || text2 == "") || (text3 == "")) //입력 칸에 공백이 하나라도 있다면
-                MessageBox.Show("입력하신 정보를 다시 확인해주세요.");
-            
-            else
+            Button btn;
+            btn = sender as Button;
+            if (btn.Text.Equals("확인"))
             {
-                string PASS = pass.Text;
-                string NAME = name.Text;
-                string PHONE = phone.Text;
-                String sql = "SELECT id from non_member where name = '" + NAME + "' and phone = '" + PHONE + "' and password = '" + PASS + "';";
-                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                SQLiteDataReader rdr = cmd.ExecuteReader();
-                if (rdr.HasRows)
-                {
-                    while (rdr.Read())
-                    {
-                        non_member_id = int.Parse(rdr["id"].ToString());
-                        Form1.is_nonmember = true;
-                    }
-                    if (buttonClicked != null)
-                        buttonClicked.Invoke("check_nonmember", e);
+                conn = new SQLiteConnection("Data source=" + path2 + ";Version=3;");
+                conn.Open();
 
-                }
+                string text1 = name.Text;
+                string text2 = phone.Text;
+                string text3 = pass.Text;
+
+                if ((text1 == "" || text2 == "") || (text3 == "")) //입력 칸에 공백이 하나라도 있다면
+                    MessageBox.Show("입력하신 정보를 다시 확인해주세요.");
+
                 else
                 {
-                    MessageBox.Show("일치하는 정보가 없습니다.");
+                    string PASS = pass.Text;
+                    string NAME = name.Text;
+                    string PHONE = phone.Text;
+                    String sql = "SELECT id from non_member where name = '" + NAME + "' and phone = '" + PHONE + "' and password = '" + PASS + "';";
+                    SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                    SQLiteDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.HasRows)
+                    {
+                        while (rdr.Read())
+                        {
+                            non_member_id = int.Parse(rdr["id"].ToString());
+                            Form1.is_nonmember = true;
+                        }
+                        if (buttonClicked != null)
+                            reset();
+                            buttonClicked.Invoke("check_nonmember", e);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("일치하는 정보가 없습니다.");
+                    }
+                    conn.Close();
                 }
-                conn.Close();
+            }
+            else if(btn.Text.Equals("취소"))
+            {
+                reset();
+                buttonClicked.Invoke("check_cancel", e);
             }
         }
 
@@ -81,5 +92,15 @@ namespace ticket
                 e.Handled = true;
             }
         }
-}
+        private void reset()
+        {
+            name.Text = "";
+            phone.Text = "";
+            pass.Text = "";
+        }
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

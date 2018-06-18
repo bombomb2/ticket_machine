@@ -37,51 +37,64 @@ namespace ticket
 
         private void button1_Click(object sender, EventArgs e)
         {
-            conn = new SQLiteConnection("Data source=" + path2 + ";Version=3;");
-            conn.Open();
-           /* string sql3 = "select * from member";
-            SQLiteCommand cmd2 = new SQLiteCommand(sql3, conn);
-            SQLiteDataReader read = cmd2.ExecuteReader();*/
-
-            
-            string text1 = name.Text;
-            string text2 = phone.Text;
-            string text4 = pass_2.Text;
-            string text3 = pass.Text;
-            
-
-
-            if ((text1 == "" || text2 == "") || (text3 == "" || text4 == "")) //입력 칸에 공백이 하나라도 있다면
-                MessageBox.Show("입력하신 정보를 다시 확인해주세요.");
-            else if (text4 != text3) { 
-                MessageBox.Show("비밀번호가 같지 않습니다.");
-            }
-            else
+            Button btn;
+            btn = sender as Button;
+            if (btn.Text.Equals("확인"))
             {
-                MessageBox.Show("가입성공");
-                string PASS = pass.Text;
-                string NAME = name.Text;
-                string PASS_2 = pass_2.Text;
-                string PHONE = phone.Text;
-                String sql = "INSERT INTO non_member (name,phone, password) VALUES ('" + NAME + "','" + PHONE + "','" + PASS + "')";
-                SQLiteCommand command = new SQLiteCommand(sql, conn);
-                command.ExecuteNonQuery();              
-                string sql2 = "SELECT id FROM non_member where name='"+NAME+"';";
-                SQLiteCommand cmd2 = new SQLiteCommand(sql2, conn);
-                SQLiteDataReader rdr = cmd2.ExecuteReader();
-                if(rdr.HasRows)
+                conn = new SQLiteConnection("Data source=" + path2 + ";Version=3;");
+                conn.Open();
+                /* string sql3 = "select * from member";
+                 SQLiteCommand cmd2 = new SQLiteCommand(sql3, conn);
+                 SQLiteDataReader read = cmd2.ExecuteReader();*/
+
+
+                string text1 = name.Text;
+                string text2 = phone.Text;
+                string text4 = pass_2.Text;
+                string text3 = pass.Text;
+
+
+
+                if ((text1 == "" || text2 == "") || (text3 == "" || text4 == "")) //입력 칸에 공백이 하나라도 있다면
+                    MessageBox.Show("입력하신 정보를 다시 확인해주세요.");
+                else if (text4 != text3)
                 {
-                    while(rdr.Read())
+                    MessageBox.Show("비밀번호가 같지 않습니다.");
+                }
+                else
+                {
+                    MessageBox.Show("가입성공");
+                    string PASS = pass.Text;
+                    string NAME = name.Text;
+                    string PASS_2 = pass_2.Text;
+                    string PHONE = phone.Text;
+                    String sql = "INSERT INTO non_member (name,phone, password) VALUES ('" + NAME + "','" + PHONE + "','" + PASS + "')";
+                    SQLiteCommand command = new SQLiteCommand(sql, conn);
+                    command.ExecuteNonQuery();
+                    string sql2 = "SELECT id FROM non_member where name='" + NAME + "';";
+                    SQLiteCommand cmd2 = new SQLiteCommand(sql2, conn);
+                    SQLiteDataReader rdr = cmd2.ExecuteReader();
+                    if (rdr.HasRows)
                     {
-                        non_id = int.Parse(rdr["id"].ToString());
+                        while (rdr.Read())
+                        {
+                            non_id = int.Parse(rdr["id"].ToString());
+                        }
+                    }
+                    conn.Close();
+                    Form1.is_nonmember = true;
+                    if (buttonClicked != null)
+                    {
+                        reset();
+                        buttonClicked.Invoke("finish_nonmember", e);
                     }
                 }
-                conn.Close();                
-                Form1.is_nonmember = true;
-                if (buttonClicked != null)
-                    buttonClicked.Invoke("finish_nonmember", e);
             }
-            
+            else if(btn.Text.Equals("취소"))
+            {
+                reset();
+                buttonClicked.Invoke("finish_cancel", e);
+            }
 
         }
 
@@ -93,6 +106,16 @@ namespace ticket
             }
         }
 
- 
+        private void bihoywon_page_2_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void reset()
+        {
+            name.Text = "";
+            phone.Text = "";
+            pass.Text = "";
+            pass_2.Text = "";
+        }
     }
 }

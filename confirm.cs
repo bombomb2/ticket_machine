@@ -47,7 +47,8 @@ namespace WindowsFormsApplication1
            Button btn;
            btn = sender as Button;          
            if(btn.Text.Equals("취소"))
-           {               
+           {
+               reset();
                buttonClicked.Invoke("카드취소",e);               
            }
            else if(btn.Text.Equals("확인"))
@@ -61,6 +62,7 @@ namespace WindowsFormsApplication1
                        {
                            if (!textBox7.Text.Equals(""))
                            {
+                               reset();
                                buttonClicked.Invoke("카드확인", e);
                            }
                            else { MessageBox.Show("비밀번호를 입력해주세요"); }
@@ -76,7 +78,17 @@ namespace WindowsFormsApplication1
            }
            
         }
- 
+       private void reset()
+       {
+           comboBox1.Text = "";
+           textBox1.Text = "";
+           textBox2.Text = "";
+           textBox3.Text = "";
+           textBox4.Text = "";
+           textBox5.Text = "";
+           textBox6.Text = "";
+           textBox7.Text = "";
+       }
        
     }
 }

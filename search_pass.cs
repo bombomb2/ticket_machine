@@ -83,7 +83,10 @@ namespace ticket
                                 MessageBox.Show("비밀번호는 " + pass + " 입니다.");
 
                                 if (buttonClicked != null)
+                                {
+                                    reset();
                                     buttonClicked.Invoke("find_password", e);
+                                }
                             }
                         }
                         else
@@ -102,7 +105,12 @@ namespace ticket
                         bunhobox.Text = "";
                         break;
                     }
-                    break;                
+                    break;    
+                case "취소":
+                    reset();
+                    buttonClicked.Invoke("pass_cancel", e);
+                    break;
+                    
             }
         }
         private void reset()
@@ -111,6 +119,8 @@ namespace ticket
             bunhobox.Text = "";
             USER.Text = "";
             phonebox.Text = "";
+            time_cho = 180;
+            timer1.Stop();
         }
         private void timer1_Tick(object sender, EventArgs e) //타이머에 대한 함수
 
@@ -132,7 +142,7 @@ namespace ticket
                 MessageBox.Show("요청시간이 지났습니다."); // 요청시간이 지날경우 화면이 사라지게??
               //  return;
                 reset();
-                buttonClicked.Invoke("passtimeover", e);               
+                buttonClicked.Invoke("passtimeover", e);                
                 
             }
 
@@ -150,7 +160,7 @@ namespace ticket
             }
 
 
-        }
+        }       
 
     }
 }

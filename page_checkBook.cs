@@ -17,6 +17,7 @@ namespace ticket
         public page_checkBook()
         {
             InitializeComponent();
+
             // load_name();
             // load_data();
         }
@@ -85,6 +86,8 @@ namespace ticket
         private void button1_Click(object sender, EventArgs e)
         {
             Form1.is_nonmember = false;
+            listView_check.Items.Clear();
+            label_name.Text = "님의 예매 내역";
             buttonClicked.Invoke("confirm_check", e);
         }
 

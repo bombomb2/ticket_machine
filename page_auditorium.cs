@@ -15,7 +15,8 @@ namespace ticket
 
     public partial class page_auditorium : UserControl
     {
-        Color color;
+        Color color = Color.FromArgb(220, 240, 245);
+        Color select_color = Color.FromArgb(249, 129, 138);
         ArrayList seat_arr = new ArrayList();//
         ArrayList temp_seatarr = new ArrayList();//현재 선택된 좌석        
         int[] seat_count = new int[4];      
@@ -36,14 +37,15 @@ namespace ticket
         string path2 = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\data.sqlite";
         public page_auditorium()
         {
-            InitializeComponent();      
+            InitializeComponent();
+            button_purchase.Enabled = false;
         }
 
        public void reset() 
         {
 
             foreach(Control x in this.Controls)
-            {
+            {                
                 if (x is Button && x.Name.Contains("adult") || x.Name.Contains("kid") || x.Name.Contains("teen"))
                     x.BackColor = color;
                 if(x is Button && x.Name.Contains("_a")|| x.Name.Contains("_b") || x.Name.Contains("_c") || x.Name.Contains("_d") || x.Name.Contains("_e") 
@@ -129,8 +131,8 @@ namespace ticket
                 button_name = btn.Name.Split('_');//버튼 이름 추출
                 if (button_text[button_text.Length - 1].Equals("다음"))
                 {                    
-                   if(seat_count[3] == temp_seatarr.Count)
-                   {
+                   if(seat_count[3] == temp_seatarr.Count && seat_count[3]!=0)
+                   {                       
                        now_count = seat_count[0] * 10000 + seat_count[1] * 8000 + seat_count[2] * 6000;
                        buttonClicked.Invoke("좌석선택다음", e);                       
                       // MessageBox.Show(now_count.ToString());
@@ -153,8 +155,8 @@ namespace ticket
                             print_pay[i+1] = null;
                             print_seatcount[i+1] = null;                        
                         }
-
                     }
+                       
                         buttonClicked.Invoke("seatcancel", e);
                 }
                 else
@@ -173,7 +175,7 @@ namespace ticket
                             select_seat();
                         }
                         else
-                            MessageBox.Show("좌석을 선택해 주세요");
+                            MessageBox.Show("인원수를 설정해 주세요");
 
                     }
 
@@ -190,9 +192,8 @@ namespace ticket
                 if (!seat_arr.Contains(button_name[button_name.Length - 1]))
                 {
                     seat_arr.Add(button_name[button_name.Length - 1]);
-                    temp_seatarr.Add(button_name[button_name.Length - 1]);
-                    color = btn.BackColor;
-                    btn.BackColor = Color.BlueViolet;                   
+                    temp_seatarr.Add(button_name[button_name.Length - 1]);                    
+                    btn.BackColor = select_color;                   
                     count++;
                 }
                 else
@@ -226,6 +227,10 @@ namespace ticket
                 else
                     now_seat += "," + temp_seatarr[i];
             }
+            if(seat_count[3] == temp_seatarr.Count)
+            {
+                button_purchase.Enabled = true;
+            }
         }
         
         private void set_seat_count()
@@ -237,7 +242,7 @@ namespace ticket
                     if (seat_count[0] != 0) seat_count[3] -= seat_count[0];
                     seat_count[0] = int.Parse(btn.Text);
                     if (preview[0] != null) preview[0].BackColor = color;
-                    btn.BackColor = Color.BlueViolet;                   
+                    btn.BackColor = select_color;                   
                     seat_count[3] += seat_count[0];
                     now_click = 0;
                     break;
@@ -245,7 +250,7 @@ namespace ticket
                     if (seat_count[1] != 0) seat_count[3] -= seat_count[1];
                     seat_count[1] = int.Parse(btn.Text);
                     if (preview[1] != null) preview[1].BackColor = color;
-                    btn.BackColor = Color.BlueViolet;                   
+                    btn.BackColor = select_color;                   
                     seat_count[3] += seat_count[1];
                     now_click = 1;
                     break;
@@ -253,7 +258,7 @@ namespace ticket
                     if (seat_count[2] != 0) seat_count[3] -= seat_count[2];
                     seat_count[2] = int.Parse(btn.Text);
                     if (preview[2] != null) preview[2].BackColor = color;
-                    btn.BackColor = Color.BlueViolet;                    
+                    btn.BackColor = select_color;                    
                     seat_count[3] += seat_count[2];
                     now_click = 2;
                     break;
@@ -287,7 +292,7 @@ namespace ticket
                 MessageBox.Show("선택된 좌석수보다 작게할 수 없습니다.");
                 btn.BackColor = color;
                 seat_count[3] -= int.Parse(btn.Text);
-                preview[now_click].BackColor = Color.BlueViolet;
+                preview[now_click].BackColor = Color.Firebrick;
                 seat_count[3] += int.Parse(preview[now_click].Text);
             }
             preview[now_click] = btn;
@@ -350,6 +355,7 @@ namespace ticket
            price.Text = print_pay[3];
 
         }
+     
     }
 }
 /* 현재 구현은 다 되었는데  인원 추가 선택후에 문제가 발생한다. 그부분 처리를 좀더 생각해보다*/

@@ -98,6 +98,12 @@ namespace ticket
                 case "idtimeover":
                     find_id1.Visible = false;
                     break;
+                case "find_id_cancel":
+                    find_id1.Visible = false;
+                    break;
+                case "pass_cancel":
+                    search_pass1.Visible = false;
+                    break;
                 
             }           
             
@@ -107,7 +113,9 @@ namespace ticket
 
         }
 
-       
-       
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

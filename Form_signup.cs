@@ -49,9 +49,8 @@ namespace ticket
 
             switch (temp_arr[temp_arr.Length - 1])
             {
-                case "중복확인":                    
-                    int count = 0;                     
-                    
+                case "중복확인":                 
+                           
                     if (!ID_Box.Text.Equals(""))
                     {
                         search_id = ID_Box.Text;                      
@@ -180,6 +179,12 @@ namespace ticket
                 e.Handled = true;
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void reset()
         {
             ID_Box.Text = "";

@@ -169,9 +169,11 @@ namespace ticket //남은 좌석수 표시하기
 
         private void listBox1_DrawItem(object sender, DrawItemEventArgs e) //목록이 그려질 때 발생하는 DrawItem 이벤트 수정
         {
+            Color color = Color.FromArgb(249, 129, 138);
+            SolidBrush br = new SolidBrush(color);
             e.DrawBackground();
             Graphics g = e.Graphics;
-            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Red : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
+            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? br : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
             g.FillRectangle(brush, e.Bounds);
             if (e.Index > -1)
                 e.Graphics.DrawString(listBox_movie_select.Items[e.Index].ToString(), e.Font,
@@ -182,11 +184,12 @@ namespace ticket //남은 좌석수 표시하기
 
         private void listBox_date_DrawItem(object sender, DrawItemEventArgs e)
         {
-
+            Color color = Color.FromArgb(249, 129, 138);
+            SolidBrush br = new SolidBrush(color);
             string sOoutput = listBox_date.Items[e.Index].ToString();
             float folength = e.Graphics.MeasureString(sOoutput, e.Font).Width;
             float fpos = (listBox_date.Width - folength) / 2;
-            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Red : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
+            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? br : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
             e.Graphics.FillRectangle(brush, e.Bounds.Left, e.Bounds.Top, e.Bounds.Width, e.Bounds.Height);
             e.Graphics.DrawString(sOoutput, e.Font,
                 ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Black : new SolidBrush(e.ForeColor), fpos, e.Bounds.Top);
@@ -195,10 +198,12 @@ namespace ticket //남은 좌석수 표시하기
         {
             if (isSelected_date && isSelected_movie)
             {
+                Color color = Color.FromArgb(249, 129, 138);
+                SolidBrush br = new SolidBrush(color);
                 string sOoutput = listBox_time.Items[e.Index].ToString();
                 float folength = e.Graphics.MeasureString(sOoutput, e.Font).Width;
                 float fpos = (listBox_time.Width - folength) / 2;
-                Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Red : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
+                Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? br : new SolidBrush(e.BackColor); //BackColor 수정 하는 곳
                 e.Graphics.FillRectangle(brush, e.Bounds.Left, e.Bounds.Top, e.Bounds.Width, e.Bounds.Height);
                 e.Graphics.DrawString(sOoutput, e.Font,
                     ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.Black : new SolidBrush(e.ForeColor), fpos, e.Bounds.Top);

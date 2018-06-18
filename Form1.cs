@@ -83,7 +83,8 @@ namespace ticket
          
             switch(temp)
             {               
-                case "예약확인":
+                case "예매확인":
+                    login_check = 0;
                     login.ShowDialog();
                     if (login_check == 1)
                     {
@@ -97,6 +98,7 @@ namespace ticket
                     }
                     break;
                 case "영화예매":
+                    login_check = 0;
                     page21.Visible = false;
                     page_movie_select1.Visible = true;
                     page_movie_select1.InitListbox();
@@ -108,7 +110,7 @@ namespace ticket
                     is_nonmember = false;
                     break;
 
-                case "movieselect_next":
+                case "movieselect_next":                    
                     login.ShowDialog();                   
                     if (login_check == 1)
                     {
@@ -160,7 +162,7 @@ namespace ticket
                     page21.Visible = true;
                     is_nonmember = false;
                     break;
-                case "seatcancel":
+                case "seatcancel":                    
                     page_auditorium1.Visible = false;
                     page21.Visible = true;
                     is_nonmember = false;
@@ -195,10 +197,29 @@ namespace ticket
                         page_checkBook1.Visible = false;
                         break;
                     }
+                case "check_cancel":
+                    {
+                        page_nonmember_login1.Visible = false;
+                        break;
+                    }
+                case "finish_cancel":
+                    {
+                        bihoywon_page_21.Visible = false;
+                        page21.Visible = true;
+                        break;
+                    }
             }           
 
         }
-       
-       
+
+        private void page21_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void how_much1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

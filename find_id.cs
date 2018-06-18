@@ -38,51 +38,63 @@ namespace ticket
 
         private void button2_Click(object sender, EventArgs e)
         {
-            temp_name = textBox1.Text.ToString();
-            temp_phone = textBox2.Text.ToString();
-            conn = new SQLiteConnection("Data source=" + Form1.path2 + ";Version = 3;");
-
-            conn.Open();
-            string sql3 = "SELECT * FROM member"; //DB읽기
-            SQLiteCommand cmd2 = new SQLiteCommand(sql3, conn);
-            SQLiteDataReader read = cmd2.ExecuteReader();
-
-            string temp = sender.ToString();
-            string[] temp_arr = temp.Split(' ');
-            while (read.Read())
+            Button btn = sender as Button;
+            if (btn.Text.Equals("확인"))
             {
-                if (read["name"].ToString().Equals(temp_name) && read["phone"].ToString().Equals(temp_phone))
-                {//name과 phone 동일하면
-                    if (int.Parse(check_num.Text) == x)
-                    {
-                        temp_id = read["user"].ToString(); //id읽기
-                        findid = temp_id;
-                        break;
+                temp_name = textBox1.Text.ToString();
+                temp_phone = textBox2.Text.ToString();
+                conn = new SQLiteConnection("Data source=" + Form1.path2 + ";Version = 3;");
+
+                conn.Open();
+                string sql3 = "SELECT * FROM member"; //DB읽기
+                SQLiteCommand cmd2 = new SQLiteCommand(sql3, conn);
+                SQLiteDataReader read = cmd2.ExecuteReader();
+
+                string temp = sender.ToString();
+                string[] temp_arr = temp.Split(' ');
+                while (read.Read())
+                {
+                    if (read["name"].ToString().Equals(temp_name) && read["phone"].ToString().Equals(temp_phone))
+                    {//name과 phone 동일하면
+                        if (int.Parse(check_num.Text) == x)
+                        {
+                            temp_id = read["user"].ToString(); //id읽기
+                            findid = temp_id;
+                            break;
+                        }
+                        else
+                        {
+                            MessageBox.Show("인증번호가 같지 않습니다." + x.ToString() + check_num.Text);
+                            check_num.Text = "";
+                            break;
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("인증번호가 같지 않습니다." + x.ToString() + check_num.Text);                        
-                        check_num.Text = "";
-                        break;
+                        temp_id = null;
+                        findid = null;
+                    }
+
+                }
+                if (findid != null)
+                {
+                    timer1.Stop();
+                    MessageBox.Show("아이디는 " + findid + " 입니다.");
+                    if (buttonClicked != null)
+                    {
+                        reset();
+                        buttonClicked.Invoke("로그인화면이동", e);
                     }
                 }
                 else
                 {
-                    temp_id = null;
-                    findid = null; 
+                    MessageBox.Show("등록된 정보가 없습니다.");
                 }
-
             }
-            if(findid != null)
+            else if(btn.Text.Equals("취소"))
             {
-                timer1.Stop();
-                MessageBox.Show("아이디는 " + findid + " 입니다.");
-                if (buttonClicked != null)                    
-                buttonClicked.Invoke("로그인화면이동", e);
-            }
-            else
-            {
-                MessageBox.Show("등록된 정보가 없습니다.");
+                reset();
+                buttonClicked.Invoke("find_id_cancel", e);
             }
         }
         private void textBox2_Keypress(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -119,6 +131,8 @@ namespace ticket
             textBox1.Text = "";
             textBox2.Text = "";
             check_num.Text = "";
+            time_cho = 180;
+            timer1.Stop();
         }
         private void timer1_Tick(object sender, EventArgs e) //타이머에 대한 함수
         {
@@ -145,6 +159,6 @@ namespace ticket
             time.Text = bun.ToString() + ":" + cho.ToString();
             
         }
-
+       
     }
 }

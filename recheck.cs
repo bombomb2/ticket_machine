@@ -16,6 +16,11 @@ namespace ticket
     {
         string info;
         SQLiteCommand cmd2;
+        int temp_point;
+        string[] temp_booked;
+        string[] temp_booked2;
+        int count = 0;
+        string temp;
 
         public recheck()
         {
@@ -28,10 +33,7 @@ namespace ticket
             add { buttonClicked += value; }
             remove { buttonClicked -= value; }
         }
-        string[] temp_booked;
-        string[] temp_booked2;
-        int count = 0;
-        string temp;
+       
         private void button1_Click(object sender, EventArgs e)
         {
             SQLiteConnection conn;
@@ -49,6 +51,16 @@ namespace ticket
                 info = "INSERT INTO reservation (id, movie_id, seat, price) VALUES (" + Form_login.id + "," + page_movie_select.movie_id + ",'" + page_auditorium.now_seat + "'," + int.Parse(page_auditorium.now_count.ToString()) + ");";
                 cmd2 = new SQLiteCommand(info, conn);
                 cmd2.ExecuteNonQuery();
+                info = "SELECT point from member where id=" + Form_login.id + ";";
+                cmd2 = new SQLiteCommand(info, conn);
+                SQLiteDataReader rdr = cmd2.ExecuteReader();
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        temp_point = int.Parse(rdr["point"].ToString());
+                    }
+                }
                 info = "UPDATE member set point=" + how_much.point + " where id=" + Form_login.id + ";";
                 cmd2 = new SQLiteCommand(info, conn);
                 cmd2.ExecuteNonQuery();
